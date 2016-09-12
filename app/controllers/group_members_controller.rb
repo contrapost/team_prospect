@@ -1,9 +1,15 @@
 class GroupMembersController < ApplicationController
   before_action :set_group_member, only: [:show, :edit, :update, :destroy]
+  # noinspection RailsParamDefResolve
+  before_action :authenticate_admin!, only: [:admin, :show, :edit, :update, :destroy]
 
   # GET /group_members
   # GET /group_members.json
   def index
+    @group_members = GroupMember.all
+  end
+
+  def admin
     @group_members = GroupMember.all
   end
 
@@ -62,12 +68,12 @@ class GroupMembersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
     def set_group_member
       @group_member = GroupMember.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list through.
     def group_member_params
       params.require(:group_member).permit(:first_name, :last_name, :description, :phone, :email, :link)
     end
