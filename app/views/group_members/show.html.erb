@@ -25,12 +25,16 @@
   <%= @group_member.email %>
 </p>
 
-<p>
-  <strong>Link:</strong>
-  <%= @group_member.link %>
-</p>
+<% unless @group_member.links.empty? %>
+    <p>
+      <strong>Link:</strong>
+      <% @group_member.links.each do |link| %>
+        <p><%= link.link_address %></p>
+    <% end %>
+    </p>
+<% end %>
 
-<% if admin_signed_in?%>
+<% if admin_signed_in? %>
     <%= link_to 'Edit', edit_group_member_path(@group_member) %> |
     <%= link_to 'Back', admin_path %>
 <% else %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<% @links.each do |link| %>
+    <%= form_tag controller: :links, action: :update_link do %>
+        <div class="field">
+          <%= text_field_tag :link_address, link.link_address, required: 'required' %>
+        </div>
+        <%= hidden_field_tag :group_member_id, @group_member.id %>
+        <%= hidden_field_tag :link_id, link.id %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="actions">
+          <%= submit_tag 'UPDATE LINK' %>
+        </div>
+    <% end %>
+    <div>
+      <%= link_to 'delete', {controller: :links, action: :delete_link, link_id: link.id, group_member_id: @group_member.id},
+                  data: {confirm: "Are you sure?"},
+                  method: :delete, class: 'btn btn-warning' %>
+    </div>
+<% end %>
+
+<%= form_tag controller: :links, action: :save_link do %>
+    <div class="field">
+      <%= text_field_tag :link_address, nil, placeholder: 'link address', required: 'required' %>
+    </div>
+    <%= hidden_field_tag :group_member_id, @group_member.id %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="actions">
+      <%= submit_tag 'SAVE' %>
+    </div>
+<% end %>

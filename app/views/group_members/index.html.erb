@@ -23,7 +23,11 @@
         <td><%= group_member.description %></td>
         <td><%= group_member.phone %></td>
         <td><%= group_member.email %></td>
-        <td><%= group_member.link %></td>
+        <td>
+          <% group_member.links.each do |link| %>
+            <p><%= link.link_address %></p>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', group_member %></td>
       </tr>
     <% end %>
