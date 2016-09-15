@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  root 'group_members#index'
+
   Rails.application.routes.draw do
-    get '/:page' => 'pages#show'
+    get 'pages/:page' => 'pages#show'
+
   end
 
   post 'links/save_link'
@@ -11,8 +14,6 @@ Rails.application.routes.draw do
 
   resources :group_members
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  root 'group_members#index'
 
   get 'admin' => 'group_members#admin', as: :admin
 
