@@ -28,7 +28,6 @@
               <p><%= link.link_address %></p>
           <% end %>
         </td>
-        <td><%= link_to 'Show', group_member %></td>
         <td><%= link_to 'Edit', edit_group_member_path(group_member) %></td>
         <td><%= link_to 'Delete', group_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Manage links', controller: :links, action: :show_links, group_member_id: group_member.id %></td>
