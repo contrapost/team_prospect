@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  Rails.application.routes.draw do
+    get '/:page' => 'pages#show'
+  end
+
   post 'links/save_link'
   post 'links/update_link'
   get 'links/show_links'
