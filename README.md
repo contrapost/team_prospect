@@ -1,3 +1,6 @@
+# REQUIREMENTS:
+1. Install imagemagick for image management - http://www.imagemagick.org/script/binary-releases.php
+
 # README
 
 This README would normally document whatever steps are necessary to get the
