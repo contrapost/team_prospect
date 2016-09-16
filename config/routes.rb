@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'group_members#index'
+  root 'pages#home'
+  get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
 
-  Rails.application.routes.draw do
-    get 'pages/:page' => 'pages#show'
-
-  end
+  get 'group' => 'group_members#index'
 
   post 'links/save_link'
   post 'links/update_link'
