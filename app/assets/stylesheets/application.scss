@@ -18,12 +18,16 @@
 html,
 body {
   height: 100%;
+  font-size:1em;
 }
 
 .container-yield {
   margin-top: 51px;
 }
 
+.no-padding{
+  padding:0;
+}
 .home-header {
 
   height: 100vh;
@@ -70,4 +74,14 @@ body {
       border-left: 2px solid black;
     }
   }
+}
+.home-our-team{
+  margin-top:25px;
+
+  .wrapper{
+    div:nth-child(2){
+      margin-top:65px;
+    }
+  }
+
 }
