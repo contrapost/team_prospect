@@ -56,9 +56,18 @@ body {
   .fa {
     display: block;
     position: absolute;
-    bottom: 3px;
+    bottom: 6%;
     left: 49%;
     font-size: 4em;
   }
 
+}
+.home-predescription{
+  .container{
+    margin-top:20px;
+    margin-bottom:20px;
+    div{
+      border-left: 2px solid black;
+    }
+  }
 }
