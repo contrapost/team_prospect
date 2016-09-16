@@ -11,6 +11,77 @@
  * It is generally better to create a new file per style scope.
  *
  */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+html,
+body {
+  height: 100%;
+  font-size:1em;
+}
+
+.container-yield {
+  margin-top: 51px;
+}
+
+.no-padding{
+  padding:0;
+}
+.home-header {
+
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  z-index:1;
+  &:after{
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("https://hd.unsplash.com/photo-1416339684178-3a239570f315");
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+    opacity : 0.56;
+    z-index: -1;
+  }
+  .inner{
+    z-index:1;
+  }
+  h2 {
+    margin-top: 15%;
+    font-size: 4em;
+  }
+  .fa {
+    display: block;
+    position: absolute;
+    bottom: 6%;
+    left: 49%;
+    font-size: 4em;
+  }
+
+}
+.home-predescription{
+  .container{
+    margin-top:20px;
+    margin-bottom:20px;
+    div{
+      border-left: 2px solid black;
+    }
+  }
+}
+.home-our-team{
+  margin-top:25px;
+
+  .wrapper{
+    div:nth-child(2){
+      margin-top:65px;
+    }
+  }
+
+}
