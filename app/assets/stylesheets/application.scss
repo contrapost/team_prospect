@@ -14,7 +14,36 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+html,
+body {
+  height:100%;
+}
 
 .container-yield{
   margin-top:51px;
+}
+
+.home-header{
+    background-image:url("https://hd.unsplash.com/photo-1416339684178-3a239570f315");
+    background-size:cover;
+    height:100vh;
+    position:relative;
+    top:0;
+    left:0;
+    background-color:blue;
+    color:white;
+
+    h2{
+      margin-top:15%;
+      font-size:4em;
+    }
+    .fa{
+      display:block;
+      position:absolute;
+      bottom:3px;
+      left:49%;
+      font-size:4em;
+    }
+
 }
