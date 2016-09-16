@@ -1,27 +1,3 @@
 # REQUIREMENTS:
-1. Install imagemagick for image management - http://www.imagemagick.org/script/binary-releases.php
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Install imagemagick for windows/os for image management - http://www.imagemagick.org/script/binary-releases.php
+2. All changes should be made in separate branches. Master branch is used for deployments to heroku, i.e. master should always contain functional version.
