@@ -1,5 +1,7 @@
 ## [HOEVDPROSJEKT.TEAM](hovedprosjekt.team)
 
+![Logo](https://s3.amazonaws.com/hovedprosjekt-shared/061608-blue-tiedyed-cloth-icon-people-things-people-audience.png)
+
 
 ### REQUIREMENTS FOR DEVELOPMENT:
 1. All changes should be made in separate branches. Master branch is used for deployments to heroku, i.e. it should always contain functional version.
