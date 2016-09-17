@@ -28,6 +28,35 @@ body {
 .no-padding{
   padding:0;
 }
+.btn-stretch{
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.footer-container{
+ background-color:#334D5C;
+  color:white;
+  position:relative;
+  .circle{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    background-color:#45B29D;
+    position:absolute;
+    left:49%;
+    top:-10%;
+
+    .fa{
+      margin-top:18px;
+    }
+  }
+  .inner{
+
+    margin-top:10%;
+    margin-bottom:10%;
+
+  }
+}
+/*===HOMEPAGE===*/
 .home-header {
 
   height: 100vh;
@@ -67,16 +96,18 @@ body {
 
 }
 .home-predescription{
+  border-bottom: 4px solid #eee;
   .container{
     margin-top:20px;
     margin-bottom:20px;
     div{
-      border-left: 2px solid black;
+      border-left: 3px solid #eee;
     }
   }
 }
 .home-our-team{
-  margin-top:25px;
+  margin-top:35px;
+  margin-bottom:35px;
 
   .wrapper{
     div:nth-child(2){
@@ -84,4 +115,13 @@ body {
     }
   }
 
+}
+.home-quote{
+  background-image: url("https://images.unsplash.com/photo-1473172707857-f9e276582ab6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=06b6df87aa726c340f547cd4fa781002");
+  background-size:cover;
+  color:white;
+  .inner{
+    margin-top:20%;
+    margin-bottom:20%;
+  }
 }
