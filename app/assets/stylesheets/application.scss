@@ -28,6 +28,14 @@ body {
 .no-padding{
   padding:0;
 }
+.footer-container{
+  background-image:url("https://hd.unsplash.com/photo-1461733558461-ff6968a0ae80");
+  background-size:cover;
+  .inner{
+
+  }
+}
+/*===HOMEPAGE===*/
 .home-header {
 
   height: 100vh;
@@ -84,4 +92,13 @@ body {
     }
   }
 
+}
+.home-quote{
+  background-image: url("https://images.unsplash.com/photo-1473172707857-f9e276582ab6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=06b6df87aa726c340f547cd4fa781002");
+  background-size:cover;
+  color:white;
+  .inner{
+    margin-top:20%;
+    margin-bottom:20%;
+  }
 }
