@@ -1,27 +1,34 @@
-<%= form_for(news) do |f| %>
-  <% if news.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(news.errors.count, "error") %> prohibited this news from being saved:</h2>
+<%= form_for news, html: {multipart: true} do |f| %>
+    <% if news.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(news.errors.count, "error") %> prohibited this news from being saved:</h2>
 
-      <ul>
-      <% news.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% news.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="field">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= f.label :news_text %>
-    <%= f.text_area :news_text %>
-  </div>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :news_text %>
+      <%= f.text_area :news_text %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>
