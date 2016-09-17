@@ -8,3 +8,8 @@
 4. To login as admin open [localhost:3000/admin](http://localhost:3000/admin). You can logout by visiting [localhost:3000/admin/logout](http://localhost:3000/admin/logout)
 5. All [static pages](app/views/pages) can be opened in browser by appending `pages/{page_name}` to [localhost:3000](http://localhost:3000) (for example [contact](app/views/pages/contact.html.erb) can be opened by visiting [localhost:3000/pages/contact](http://localhost:3000/pages/cantact)).
 
+### IMAGE UPLOAD:
+1. Open [hovedprosjekt.com/admin](hovedprosjekt.com/admin) or [hovedprosjekt.com/images](hovedprosjekt.com/images) and login as admin.
+2. Click on `New image`.
+3. Open [hovedprosjekt.com/images](hovedprosjekt.com/images) or press `Back`button.
+4. Now you can use image url form the list of images in your code.
