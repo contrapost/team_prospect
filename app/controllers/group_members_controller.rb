@@ -1,7 +1,7 @@
 class GroupMembersController < ApplicationController
   before_action :set_group_member, only: [:show, :edit, :update, :destroy]
   # noinspection RailsParamDefResolve
-  before_action :authenticate_admin!, only: [:admin, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:admin, :new, :edit, :update, :destroy]
 
   # GET /group_members
   # GET /group_members.json

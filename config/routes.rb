@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :news
   root 'pages#home'
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get 'admin' => 'group_members#admin', as: :admin
+  get 'admin/news' => 'news#admin'
 
   devise_for :admin, :skip => [:sessions, :passwords]
   as :admin do
