@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :images
   resources :news
   root 'pages#home'
   get 'about' => 'pages#about'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'admin' => 'group_members#admin', as: :admin
   get 'admin/news' => 'news#admin'
+  get 'admin/images' => 'images#index'
 
   devise_for :admin, :skip => [:sessions, :passwords]
   as :admin do
