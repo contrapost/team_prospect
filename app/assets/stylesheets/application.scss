@@ -28,10 +28,31 @@ body {
 .no-padding{
   padding:0;
 }
+.btn-stretch{
+  padding-left: 20%;
+  padding-right: 20%;
+}
 .footer-container{
-  background-image:url("https://hd.unsplash.com/photo-1461733558461-ff6968a0ae80");
-  background-size:cover;
+ background-color:#334D5C;
+  color:white;
+  position:relative;
+  .circle{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    background-color:#45B29D;
+    position:absolute;
+    left:49%;
+    top:-10%;
+
+    .fa{
+      margin-top:18px;
+    }
+  }
   .inner{
+
+    margin-top:10%;
+    margin-bottom:10%;
 
   }
 }
@@ -75,16 +96,18 @@ body {
 
 }
 .home-predescription{
+  border-bottom: 4px solid #eee;
   .container{
     margin-top:20px;
     margin-bottom:20px;
     div{
-      border-left: 2px solid black;
+      border-left: 3px solid #eee;
     }
   }
 }
 .home-our-team{
-  margin-top:25px;
+  margin-top:35px;
+  margin-bottom:35px;
 
   .wrapper{
     div:nth-child(2){
