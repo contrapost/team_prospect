@@ -9,7 +9,7 @@
 5. All [static pages](app/views/pages) can be opened in browser by appending `pages/{page_name}` to [localhost:3000](http://localhost:3000) (for example [contact](app/views/pages/contact.html.erb) can be opened by visiting [localhost:3000/pages/contact](http://localhost:3000/pages/cantact)).
 
 ### IMAGE UPLOAD:
-1. Open [hovedprosjekt.com/admin](http://hovedprosjekt.com/admin) or [hovedprosjekt.com/images](http://hovedprosjekt.com/images) and login as admin.
-2. Click on [New image](http://hovedprosjekt.com/images/new).
-3. Open [hovedprosjekt.com/images](http://hovedprosjekt.com/images) or press `Back`button.
+1. Open [hovedprosjekt.team/admin](http://hovedprosjekt.team/admin) or [hovedprosjekt.team/images](http://hovedprosjekt.team/images) and login as admin.
+2. Click on [New image](http://hovedprosjekt.team/images/new).
+3. Open [hovedprosjekt.team/images](http://hovedprosjekt.team/images) or press `Back`button.
 4. Now you can use image url form the list of images in your code.
