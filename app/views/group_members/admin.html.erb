@@ -20,7 +20,7 @@
   </thead>
 
   <tbody>
-  <% @group_members.each do |group_member| %>
+  <% @group_members.order(:id).each do |group_member| %>
       <tr>
         <td><%= image_tag group_member.photo.url (:thumb)%></td>
         <td><%= group_member.first_name %></td>
