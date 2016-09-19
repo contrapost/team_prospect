@@ -1,34 +1,45 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @group_member.photo.url (:medium)%>
-</p>
+<div class="container">
+  <div class="row group-member-intro">
+    <div class="col-md-6 group-member-name-wrapper">
+      <h2>Hei, jeg heter</h2>
+      <h2 class="group-member-name">
+        <strong><%= @group_member.first_name%> <br>
+        <%= @group_member.last_name %></strong>
+      </h2>
+      <h2>Programmering</h2>
+      <div class="media-reference">
+        <i class="fa fa-github"></i>
+        <i class="fa fa-linkedin"></i>
+      </div>
+    </div>
+    <div class="col-md-6 no-padding">
+      <%= image_tag @group_member.photo.url (:medium)%>
+    </div>
+  </div>
+  <div class="row group-member-description">
+    <div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @group_member.first_name %>
-</p>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Biografi</a></li>
+        <li role="presentation"><a href="#experience" aria-controls="experience" role="tab" data-toggle="tab">Arbeidserfaring</a></li>
+        <li role="presentation"><a href="#education" aria-controls="education" role="tab" data-toggle="tab">Utdanning</a></li>
+      </ul>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @group_member.last_name %>
-</p>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="descritpion"><%= @group_member.description %></div>
+        <div role="tabpanel" class="tab-pane" id="experience">Profile</div>
+        <div role="tabpanel" class="tab-pane" id="education">Messages</div>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @group_member.description %>
-</p>
+    </div>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @group_member.phone %>
-</p>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @group_member.email %>
-</p>
+
 
 <% unless @group_member.links.empty? %>
     <p>
