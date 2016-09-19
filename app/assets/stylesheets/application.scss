@@ -125,3 +125,16 @@ body {
     margin-bottom:20%;
   }
 }
+
+/*===GROUP_MEMBERS===*/
+
+.group-member-intro{
+  margin-top:25px;
+  .group-member-name-wrapper{
+    margin-top:30px;
+  }
+  .group-member-name{
+    text-transform:uppercase;
+    font-size:60px;
+  }
+}
