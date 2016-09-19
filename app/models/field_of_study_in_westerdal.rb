@@ -1,0 +1,2 @@
+class FieldOfStudyInWesterdal < ApplicationRecord
+end

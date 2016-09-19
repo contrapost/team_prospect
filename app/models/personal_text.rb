@@ -1,0 +1,2 @@
+class PersonalText < ApplicationRecord
+end
