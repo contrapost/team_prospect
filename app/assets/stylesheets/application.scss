@@ -28,6 +28,9 @@ body {
 .no-padding{
   padding:0;
 }
+.margin-top{
+  margin-top:25px;
+}
 .btn-stretch{
   padding-left: 20%;
   padding-right: 20%;
@@ -132,9 +135,34 @@ body {
   margin-top:25px;
   .group-member-name-wrapper{
     margin-top:30px;
+    .group-member-name{
+      text-transform:uppercase;
+      font-size:60px;
+    }
   }
-  .group-member-name{
-    text-transform:uppercase;
-    font-size:60px;
+  .no-padding{
+    img{
+      width:100%;
+    }
+  }
+}
+.group-member-description{
+  .tab-content{
+    padding:65px;
+    background-color:#e8e9fe;
+  }
+  .nav-tabs{
+    border-bottom: 5px solid #334D5C;
+    li a{
+      padding:33px 80px;
+      margin:0px;
+      border-radius:0px;
+    }
+    .active a, li a:hover{
+      color:white;
+      background-color:#334D5C;
+      border:0;
+      border-bottom: 1px solid #334D5C;
+    }
   }
 }
