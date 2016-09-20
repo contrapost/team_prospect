@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<% @fields_of_studies.each do |field_of_study| %>
+    <%= form_tag controller: :field_of_study_in_westerdals, action: :update do %>
+        <div class="field">
+          <%= text_field_tag :name, field_of_study.name, required: 'required' %>
+        </div>
+        <div class="field">
+          <%= text_field_tag :description, field_of_study.description, required: 'required' %>
+        </div>
+        <div class="field">
+          <%= text_field_tag :link, field_of_study.link, required: 'required' %>
+        </div>
+        <%= hidden_field_tag :link_id, field_of_study.id %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="actions">
+          <%= submit_tag 'UPDATE' %>
+        </div>
+    <% end %>
+    <div>
+      <%= link_to 'delete', {controller: :field_of_study_in_westerdals, action: :delete, field_of_study_id: field_of_study.id},
+                  data: {confirm: "Are you sure?"},
+                  method: :delete, class: 'btn btn-warning' %>
+    </div>
+<% end %>
+
+<%= form_tag controller: :field_of_study_in_westerdals, action: :save do %>
+    <div class="field">
+      <%= text_field_tag :name, nil, placeholder: 'name of study', required: 'required' %>
+    </div>
+    <div class="field">
+      <%= text_field_tag :description, nil, placeholder: 'description', required: 'required' %>
+    </div>
+    <div class="field">
+      <%= text_field_tag :link, nil, placeholder: 'link to westerdals web page', required: 'required' %>
+    </div>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="actions">
+      <%= submit_tag 'SAVE' %>
+    </div>
+<% end %>

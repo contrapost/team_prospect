@@ -1,2 +1,55 @@
-<h1>WorkExperiences#show</h1>
-<p>Find me in app/views/work_experiences/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<% @work_experiences.each do |work_experience| %>
+    <%= form_tag controller: :work_experiences, action: :update do %>
+        <div class="field">
+          <%=  date_field_tag :start, work_experience.start, required: 'required' %>
+        </div>
+        <div class="field">
+          <%= date_field_tag :end, work_experience.end %>
+        </div>
+        <div class="field">
+          <%= text_field_tag :company, work_experience.company, required: 'required' %>
+        </div>
+        <div class="field">
+          <%= text_field_tag :position, work_experience.position, required: 'required' %>
+        </div>
+        <div class="field">
+          <%= text_field_tag :optional_info, work_experience.optional_info, required: 'required' %>
+        </div>
+        <%= hidden_field_tag :group_member_id, @group_member.id %>
+        <%= hidden_field_tag :work_experience_id, work_experience.id %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="actions">
+          <%= submit_tag 'UPDATE LINK' %>
+        </div>
+    <% end %>
+    <div>
+      <%= link_to 'delete', {controller: :work_experiences, action: :delete, work_experience_id: work_experience.id, group_member_id: @group_member.id},
+                  data: {confirm: "Are you sure?"},
+                  method: :delete, class: 'btn btn-warning' %>
+    </div>
+<% end %>
+
+<%= form_tag controller: :work_experiences, action: :save do %>
+    <div class="field">
+      <%=  date_field_tag :start, nil, required: 'required' %>
+    </div>
+    <div class="field">
+      <%= date_field_tag :end, nil %>
+    </div>
+    <div class="field">
+      <%= text_field_tag :company, nil, placeholder: 'company name', required: 'required' %>
+    </div>
+    <div class="field">
+      <%= text_field_tag :position, nil, placeholder: 'position', required: 'required' %>
+    </div>
+    <div class="field">
+      <%= text_field_tag :optional_info, nil, placeholder: 'optional', required: 'required' %>
+    </div>
+    <%= hidden_field_tag :group_member_id, @group_member.id %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="actions">
+      <%= submit_tag 'SAVE' %>
+    </div>
+<% end %>

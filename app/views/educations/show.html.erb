@@ -1,2 +1,49 @@
-<h1>Educations#show</h1>
-<p>Find me in app/views/educations/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<% @educations.each do |education| %>
+    <%= form_tag controller: :educations, action: :update do %>
+        <div class="field">
+          <%=  date_field_tag :start, education.start, required: 'required' %>
+        </div>
+        <div class="field">
+          <%= date_field_tag :end, education.end %>
+        </div>
+        <div class="field">
+          <%= text_field_tag :institution_name, education.institution_name, required: 'required' %>
+        </div>
+        <div class="field">
+          <%= text_field_tag :field_of_study, education.field_of_study, required: 'required' %>
+        </div>
+        <%= hidden_field_tag :group_member_id, @group_member.id %>
+        <%= hidden_field_tag :education_id, education.id %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="actions">
+          <%= submit_tag 'UPDATE LINK' %>
+        </div>
+    <% end %>
+    <div>
+      <%= link_to 'delete', {controller: :educations, action: :delete, education_id: education.id, group_member_id: @group_member.id},
+                  data: {confirm: "Are you sure?"},
+                  method: :delete, class: 'btn btn-warning' %>
+    </div>
+<% end %>
+
+<%= form_tag controller: :educations, action: :save do %>
+    <div class="field">
+      <%=  date_field_tag :start, nil, required: 'required' %>
+    </div>
+    <div class="field">
+      <%= date_field_tag :end, nil %>
+    </div>
+    <div class="field">
+      <%= text_field_tag :institution_name, nil, placeholder: 'institution name', required: 'required' %>
+    </div>
+    <div class="field">
+      <%= text_field_tag :field_of_study, nil, placeholder: 'field of study', required: 'required' %>
+    </div>
+    <%= hidden_field_tag :group_member_id, @group_member.id %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="actions">
+      <%= submit_tag 'SAVE' %>
+    </div>
+<% end %>

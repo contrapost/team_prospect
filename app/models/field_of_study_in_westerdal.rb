@@ -1,3 +1,3 @@
 class FieldOfStudyInWesterdal < ApplicationRecord
-  belongs_to :group_member
+  has_many :group_members
 end

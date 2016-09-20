@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919201413) do
+ActiveRecord::Schema.define(version: 20160920094113) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20160919201413) do
 
   create_table "bios", force: :cascade do |t|
     t.text     "paragraph"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_member_id"
   end
 
   create_table "educations", force: :cascade do |t|
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160919201413) do
     t.string   "field_of_study"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "group_member_id"
   end
 
   create_table "field_of_study_in_westerdals", force: :cascade do |t|
@@ -57,18 +59,13 @@ ActiveRecord::Schema.define(version: 20160919201413) do
     t.string   "last_name"
     t.string   "phone"
     t.string   "email"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer  "field_of_study_id"
-    t.integer  "bio_id"
-    t.integer  "work_experience_id"
-    t.integer  "education_id"
-    t.integer  "skill_id"
-    t.integer  "personal_text_id"
+    t.integer  "field_of_study_in_westerdal_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -101,14 +98,16 @@ ActiveRecord::Schema.define(version: 20160919201413) do
 
   create_table "personal_texts", force: :cascade do |t|
     t.text     "paragraph"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_member_id"
   end
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_member_id"
   end
 
   create_table "work_experiences", force: :cascade do |t|
@@ -117,8 +116,9 @@ ActiveRecord::Schema.define(version: 20160919201413) do
     t.string   "company"
     t.string   "position"
     t.text     "optional_info"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_member_id"
   end
 
 end

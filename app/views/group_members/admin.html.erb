@@ -1,41 +1,91 @@
 <p id="notice"><%= notice %></p>
 
-<p><%= link_to 'New Group Member', new_group_member_path %> <%= link_to 'New News', new_news_path %> <%= link_to 'New Image', new_image_path %></p>
+<div class="row">
+  <div class="col-xs-3"><%= link_to 'New Group Member', new_group_member_path, class: 'btn btn-success' %></div>
+  <div class="col-xs-3"><%= link_to 'New News', new_news_path, class: 'btn btn-success' %></div>
+  <div class="col-xs-3"><%= link_to 'New Image', new_image_path, class: 'btn btn-success' %></div>
+  <div class="col-xs-3"><%= link_to 'Manage field of study', field_of_study_in_westerdals_show_path, class: 'btn btn-success' %></div>
+</div>
 
-<h1>Group Members</h1>
 
-<table>
-  <thead>
-  <tr>
-    <th>Photo</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <!--<th>Description</th>-->
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Link</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+<h1 class="page-header">Group Members</h1>
 
-  <tbody>
-  <% @group_members.order(:id).each do |group_member| %>
-      <tr>
-        <td><%= image_tag group_member.photo.url (:thumb)%></td>
-        <td><%= group_member.first_name %></td>
-        <td><%= group_member.last_name %></td>
-        <!--<td><%# group_member.description %></td>-->
-        <td><%= group_member.phone %></td>
-        <td><%= group_member.email %></td>
-        <td>
-          <% group_member.links.each do |link| %>
-              <p><%= link.link_address %></p>
-          <% end %>
-        </td>
-        <td><%= link_to 'Edit', edit_group_member_path(group_member) %></td>
-        <td><%= link_to 'Delete', group_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Manage links', controller: :links, action: :show_links, group_member_id: group_member.id %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+
+<% @group_members.order(:id).each do |group_member| %>
+    <div class="row", style="border-bottom: 3px solid green; margin-bottom: 30px">
+      <div class="col-xs-1">Photo</div>
+      <div class="col-xs-1">First name</div>
+      <div class="col-xs-1">Last name</div>
+      <div class="col-xs-1">Phone</div>
+      <div class="col-xs-1">Email</div>
+      <div class="col-xs-1">Link</div>
+      <div class="col-xs-1">Skills</div>
+      <div class="col-xs-1">Work experiences</div>
+      <div class="col-xs-1">Education</div>
+      <div class="col-xs-1">Bio</div>
+      <div class="col-xs-1">Field of study Westerdals</div>
+      <div class="col-xs-1">Personal text</div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <%= image_tag group_member.photo.url (:thumb) %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <%= group_member.first_name %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <%= group_member.last_name %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <%= group_member.phone %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <%= group_member.email %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <% group_member.links.each do |link| %>
+            <p><%= link.link_address %></p>
+        <% end %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <% group_member.skills.each do |skill| %>
+            <p><%= skill.name %></p>
+        <% end %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <% group_member.work_experiences.each do |experience| %>
+            <p><%= experience.company %></p>
+        <% end %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <% group_member.educations.each do |education| %>
+            <p><%= education.institution_name %></p>
+        <% end %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <% group_member.bios.each do |bio| %>
+            <p><%= bio.paragraph %></p>
+        <% end %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <%= group_member.field_of_study_in_westerdal.name %>
+      </div>
+      <div class="col-xs-1" style="margin-bottom: 30px">
+        <% group_member.personal_texts.each do |text| %>
+            <p><%= text.paragraph %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px; border-bottom: 2px double">
+      <div class="col-xs-1" style="margin-bottom: 30px"><%= link_to 'Edit', edit_group_member_path(group_member), class: 'btn btn-default' %></div>
+      <div class="col-xs-1" style="margin-bottom: 30px"><%= link_to 'Delete', group_member, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default' %></div>
+      <div class="col-xs-1" style="margin-bottom: 30px"><%= link_to 'Manage links', links_show_links_path(group_member_id: group_member.id), class: 'btn btn-default' %></div>
+      <div class="col-xs-1" style="margin-bottom: 30px"><%= link_to 'Manage skills', skills_show_path(group_member_id: group_member.id), class: 'btn btn-default' %></div>
+      <div class="col-xs-2" style="margin-bottom: 30px"><%= link_to 'Manage work experiences', work_experiences_show_path(group_member_id: group_member.id), class: 'btn btn-default' %></div>
+      <div class="col-xs-2" style="margin-bottom: 30px"><%= link_to 'Manage educations', educations_show_path(group_member_id: group_member.id), class: 'btn btn-default' %></div>
+      <div class="col-xs-1" style="margin-bottom: 30px"><%= link_to 'Manage bio', bios_show_path(group_member_id: group_member.id), class: 'btn btn-default' %></div>
+      <div class="col-xs-1" style="margin-bottom: 30px"><%= link_to 'Manage personal text', personal_texts_show_path(group_member_id: group_member.id), class: 'btn btn-default' %></div>
+    </div>
+<% end %>

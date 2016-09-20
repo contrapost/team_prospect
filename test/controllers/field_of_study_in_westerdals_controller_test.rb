@@ -1,23 +1,23 @@
 require 'test_helper'
 
-class FieldOfStudiesControllerTest < ActionDispatch::IntegrationTest
+class FieldOfStudyInWesterdalsControllerTest < ActionDispatch::IntegrationTest
   test "should get show" do
-    get field_of_studies_show_url
+    get field_of_study_in_westerdals_show_url
     assert_response :success
   end
 
   test "should get save" do
-    get field_of_studies_save_url
+    get field_of_study_in_westerdals_save_url
     assert_response :success
   end
 
   test "should get update" do
-    get field_of_studies_update_url
+    get field_of_study_in_westerdals_update_url
     assert_response :success
   end
 
   test "should get delete" do
-    get field_of_studies_delete_url
+    get field_of_study_in_westerdals_delete_url
     assert_response :success
   end
 
