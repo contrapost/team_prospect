@@ -1,25 +1,38 @@
+<div class="container">
+  <div class="row">
+    <% @group_members.order(:id).each do |group_member| %>
+        <!-- TODO: wrap a link around this div or around the child elements Alexander -->
+        <div class="col-md-4">
+          <%= image_tag group_member.photo.url (:thumb) %>
+          <h2><%= group_member.first_name %> <%= group_member.last_name %></h2>
+        </div>
+
+    <% end %>
+  </div>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Group Members</h1>
 
 <table>
   <thead>
-    <tr>
-      <th>Photo</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Description</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Link</th>
-      <th></th>
-    </tr>
+  <tr>
+    <th>Photo</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Description</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Link</th>
+    <th></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @group_members.order(:id).each do |group_member| %>
+  <% @group_members.order(:id).each do |group_member| %>
       <tr>
-        <td><%= image_tag group_member.photo.url (:thumb)%></td>
+        <td><%= image_tag group_member.photo.url (:thumb) %></td>
         <td><%= group_member.first_name %></td>
         <td><%= group_member.last_name %></td>
         <td><%= group_member.description %></td>
@@ -27,12 +40,12 @@
         <td><%= group_member.email %></td>
         <td>
           <% group_member.links.each do |link| %>
-            <p><%= link.link_address %></p>
+              <p><%= link.link_address %></p>
           <% end %>
         </td>
         <td><%= link_to 'Show', group_member %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

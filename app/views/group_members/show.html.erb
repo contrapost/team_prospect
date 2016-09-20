@@ -22,7 +22,7 @@
     <div>
       <!-- TODO: Fix so all tabs works. -->
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" id="rowTab" role="tablist">
+      <ul class="nav nav-tabs" id="myTabs" role="tablist">
         <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Biografi</a></li>
         <li role="presentation"><a href="#experience" aria-controls="experience" role="tab" data-toggle="tab">Arbeidserfaring</a></li>
         <li role="presentation"><a href="#education" aria-controls="education" role="tab" data-toggle="tab">Utdanning</a></li>
@@ -57,9 +57,3 @@
 <% else %>
     <%= link_to 'Back', root_path %>
 <% end %>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#rowTab a:first').tab('show');
-  });
-</script>
