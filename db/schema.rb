@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160917115747) do
+ActiveRecord::Schema.define(version: 20160920094113) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,18 +29,43 @@ ActiveRecord::Schema.define(version: 20160917115747) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "bios", force: :cascade do |t|
+    t.text     "paragraph"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_member_id"
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.date     "start"
+    t.date     "end"
+    t.string   "institution_name"
+    t.string   "field_of_study"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "group_member_id"
+  end
+
+  create_table "field_of_study_in_westerdals", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "group_members", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.text     "description"
     t.string   "phone"
     t.string   "email"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "field_of_study_in_westerdal_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -69,6 +94,31 @@ ActiveRecord::Schema.define(version: 20160917115747) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "personal_texts", force: :cascade do |t|
+    t.text     "paragraph"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_member_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_member_id"
+  end
+
+  create_table "work_experiences", force: :cascade do |t|
+    t.date     "start"
+    t.date     "end"
+    t.string   "company"
+    t.string   "position"
+    t.text     "optional_info"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "group_member_id"
   end
 
 end

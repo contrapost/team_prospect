@@ -29,7 +29,7 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="descritpion"><%= @group_member.description %></div>
+        <div role="tabpanel" class="tab-pane active" id="descritpion"><= @group_member.bios %></div>
         <div role="tabpanel" class="tab-pane" id="experience">Profile</div>
         <div role="tabpanel" class="tab-pane" id="education">Messages</div>
       </div>
@@ -56,4 +56,47 @@
 <% else %>
     <%= link_to 'Back', root_path %>
 <% end %>
+
+<h3>All user's data</h3>
+<div class="row">
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <%= @group_member.phone %>
+  </div>
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <%= @group_member.email %>
+  </div>
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <% @group_member.links.each do |link| %>
+        <p><%= link.link_address %></p>
+    <% end %>
+  </div>
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <% @group_member.skills.each do |skill| %>
+        <p><%= skill.name %></p>
+    <% end %>
+  </div>
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <% @group_member.work_experiences.each do |experience| %>
+        <p><%= experience.company %></p>
+    <% end %>
+  </div>
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <% @group_member.educations.each do |education| %>
+        <p><%= education.institution_name %></p>
+    <% end %>
+  </div>
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <% @group_member.bios.each do |bio| %>
+        <p><%= bio.paragraph %></p>
+    <% end %>
+  </div>
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <%= @group_member.field_of_study_in_westerdal.name %>
+  </div>
+  <div class="col-xs-1" style="margin-bottom: 30px">
+    <% @group_member.personal_texts.each do |text| %>
+        <p><%= text.paragraph %></p>
+    <% end %>
+  </div>
+</div>
 
