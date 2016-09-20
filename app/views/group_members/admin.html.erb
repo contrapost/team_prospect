@@ -70,7 +70,7 @@
         <% end %>
       </div>
       <div class="col-xs-1" style="margin-bottom: 30px">
-        <%= group_member.field_of_study_in_westerdal.name %>
+        <%= group_member.field_of_study_in_westerdal&.name %>
       </div>
       <div class="col-xs-1" style="margin-bottom: 30px">
         <% group_member.personal_texts.each do |text| %>
