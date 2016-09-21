@@ -17,11 +17,12 @@
       <%= image_tag @group_member.photo.url (:medium)%>
     </div>
   </div>
+
   <div class="row group-member-description">
     <div>
-
+      <!-- TODO: Fix so all tabs works. -->
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
+      <ul class="nav nav-tabs" id="myTabs" role="tablist">
         <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Biografi</a></li>
         <li role="presentation"><a href="#experience" aria-controls="experience" role="tab" data-toggle="tab">Arbeidserfaring</a></li>
         <li role="presentation"><a href="#education" aria-controls="education" role="tab" data-toggle="tab">Utdanning</a></li>
