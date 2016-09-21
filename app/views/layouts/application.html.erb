@@ -3,8 +3,8 @@
 <head>
   <title>HOVEDPROSJEKT</title>
   <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'true' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
@@ -30,9 +30,13 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
+
 <div class="container-fluid container-yield">
   <%= yield %>
 </div>
+
+<!--TODO: Benny, footer-container works unstable in mobile version, i.e. part of "kontakt@hovedprosjekt.team" isn't visible, but
+     if I change it to usual container I can see all the text. This bug reflects o navbar length (it's unnecessary looooong!)-->
 <footer class="footer-container">
   <div class="container">
     <div class="circle text-center"><i class="fa fa-star"></i></div>
@@ -42,10 +46,6 @@
     </div>
   </div>
 </footer>
-</div>
-
-<!-- TODO: add Jquery here -->
-<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 </body>
 </html>
 
