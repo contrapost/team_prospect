@@ -19,39 +19,43 @@
   margin-top: 51px;
 }
 
-.no-padding{
-  padding:0;
+.no-padding {
+  padding: 0;
 }
-.margin-top{
-  margin-top:25px;
+
+.margin-top {
+  margin-top: 25px;
 }
-.btn-stretch{
+
+.btn-stretch {
   padding-left: 20%;
   padding-right: 20%;
 }
-.footer-container{
- background-color:#334D5C;
-  color:white;
-  position:relative;
-  .circle{
-    height:50px;
-    width:50px;
-    border-radius:50%;
-    background-color:#45B29D;
-    position:absolute;
-    left:49%;
-    top:-10%;
 
-    .fa{
-      margin-top:18px;
+.footer-container {
+  background-color: #334D5C;
+  color: white;
+  position: relative;
+  .circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #45B29D;
+    position: absolute;
+    left: 49%;
+    top: -10%;
+
+    .fa {
+      margin-top: 18px;
     }
   }
-  .inner{
-    margin-top:10%;
-    margin-bottom:10%;
+  .inner {
+    margin-top: 10%;
+    margin-bottom: 10%;
 
   }
 }
+
 /*===HOMEPAGE===*/
 .home-header {
 
@@ -61,22 +65,22 @@
   left: 0;
   background-color: black;
   color: white;
-  z-index:1;
-  &:after{
-    content : "";
+  z-index: 1;
+  &:after {
+    content: "";
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     background-image: url("https://hd.unsplash.com/photo-1416339684178-3a239570f315");
-    background-size:cover;
+    background-size: cover;
     width: 100%;
     height: 100%;
-    opacity : 0.56;
+    opacity: 0.56;
     z-index: -1;
   }
-  .inner{
-    z-index:1;
+  .inner {
+    z-index: 1;
   }
   h2 {
     margin-top: 15%;
@@ -90,91 +94,112 @@
   }
 
 }
-.home-predescription{
+
+.home-predescription {
   border-bottom: 4px solid #eee;
-  .container{
-    margin-top:20px;
-    margin-bottom:20px;
-    div{
+  .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    div {
       border-left: 3px solid #eee;
     }
   }
 }
-.home-our-team{
-  margin-top:35px;
-  margin-bottom:35px;
 
-  .wrapper{
-    div:nth-child(2){
-      margin-top:65px;
+.home-our-team {
+  margin-top: 35px;
+  margin-bottom: 35px;
+
+  .wrapper {
+    div:nth-child(2) {
+      margin-top: 65px;
     }
   }
 
 }
-.home-quote{
+
+.home-quote {
   background-image: url("https://images.unsplash.com/photo-1473172707857-f9e276582ab6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=06b6df87aa726c340f547cd4fa781002");
-  background-size:cover;
-  color:white;
-  .inner{
-    margin-top:20%;
-    margin-bottom:20%;
+  background-size: cover;
+  color: white;
+  .inner {
+    margin-top: 20%;
+    margin-bottom: 20%;
   }
 }
 
 /*===GROUP_MEMBERS===*/
 
-.group-member-intro{
-  margin-top:25px;
-  .group-member-name-wrapper{
-    margin-top:30px;
-    .group-member-name{
-      text-transform:uppercase;
-      font-size:60px;
+.group-member-intro {
+  margin-top: 25px;
+  .group-member-name-wrapper {
+    margin-top: 30px;
+    .group-member-name {
+      text-transform: uppercase;
+      font-size: 60px;
     }
   }
-  .no-padding{
-    img{
-      width:100%;
+  .no-padding {
+    img {
+      width: 100%;
     }
   }
 }
-.group-member-description{
-  .tab-content{
-    padding:65px;
-    background-color:#e8e9fe;
+
+.group-member-description {
+  .tab-content {
+    padding: 65px;
+    background-color: #e8e9fe;
   }
-  .nav-tabs{
+  .nav-tabs {
     border-bottom: 5px solid #334D5C;
-    li a{
-      padding:33px 80px;
-      margin:0px;
-      border-radius:0px;
+    li a {
+      padding: 33px 80px;
+      margin: 0px;
+      border-radius: 0px;
     }
-    .active a, li a:hover, li a:focus{
-      color:white;
-      background-color:#334D5C;
-      border:0;
+    .active a, li a:hover, li a:focus {
+      color: white;
+      background-color: #334D5C;
+      border: 0;
       border-bottom: 1px solid #334D5C;
     }
   }
 }
 
-.group-member-page{
+.group-member-page {
   margin-bottom: 45px;
 }
 
-
 /*=== MEDIA QUERIES===*/
-@media only screen and (min-width : 320px) and(max-width : 768px) {
-h2{
-  font-size:15px;
-}
-  .navbar{
-    padding-right:15px;
-    padding-left:15px;
+@media only screen and (min-width: 320px) and(max-width: 768px) {
+  h2,h4 {
+    font-size: 15px;
+  }
 
-    .navbar-toggle{
-      margin:0px;
+  .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    .navbar-toggle {
+      margin-right: 0px;
+    }
+  }
+  .home-header{
+    h2{
+      font-size:34px;
+      margin-top:50%;
+    }
+  }
+  .footer-container{
+    .circle {
+      width: 30px;
+      height: 30px;
+      left:46%;
+
+      .fa {
+        margin-top:10px;
+      }
     }
   }
 }
