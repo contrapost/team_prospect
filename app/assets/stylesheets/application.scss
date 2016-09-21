@@ -158,11 +158,15 @@ body {
       margin:0px;
       border-radius:0px;
     }
-    .active a, li a:hover{
+    .active a, li a:hover, li a:focus{
       color:white;
       background-color:#334D5C;
       border:0;
       border-bottom: 1px solid #334D5C;
     }
   }
+}
+
+.group-member-page{
+  margin-bottom: 45px;
 }
