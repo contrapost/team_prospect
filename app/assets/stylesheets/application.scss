@@ -15,12 +15,6 @@
 @import "bootstrap";
 @import "font-awesome";
 
-html,
-body {
-  height: 100%;
-  font-size:1em;
-}
-
 .container-yield {
   margin-top: 51px;
 }
@@ -53,7 +47,6 @@ body {
     }
   }
   .inner{
-
     margin-top:10%;
     margin-bottom:10%;
 
@@ -87,7 +80,6 @@ body {
   }
   h2 {
     margin-top: 15%;
-    font-size: 4em;
   }
   .fa {
     display: block;
@@ -169,4 +161,20 @@ body {
 
 .group-member-page{
   margin-bottom: 45px;
+}
+
+
+/*=== MEDIA QUERIES===*/
+@media only screen and (min-width : 320px) and(max-width : 768px) {
+h2{
+  font-size:15px;
+}
+  .navbar{
+    padding-right:15px;
+    padding-left:15px;
+
+    .navbar-toggle{
+      margin:0px;
+    }
+  }
 }
