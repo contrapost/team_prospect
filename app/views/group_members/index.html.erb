@@ -1,11 +1,17 @@
 <div class="container">
-  <div class="row">
+  <div class="row group-member-page">
     <% @group_members.order(:id).each do |group_member| %>
-        <div class="col-md-4">
+        <div class="col-xs-12 col-md-4">
           <%= link_to group_member do %>
-          <%= image_tag group_member.photo.url (:thumb) %>
-              <% end %>
-          <h2><%= group_member.first_name %> <%= group_member.last_name %></h2>
+              <div class="col-xs-12">
+                <!-- TODO: ALEX can you implement img-responsive class here? -->
+                <%= image_tag group_member.photo.url (:thumb), class:'img-responsive' %>
+              </div>
+              <div class="col-xs-12">
+                <h2 class="text-center"><%= group_member.first_name %> <%= group_member.last_name %></h2>
+              </div>
+          <% end %>
+
         </div>
 
     <% end %>
@@ -19,8 +25,8 @@
 <%#= group_member.phone %>
 <%#= group_member.email %>
 
-  <%# group_member.links.each do |link| %>
-      <!--<p><%# link.link_address %></p>-->
-  <%# end %>
+<%# group_member.links.each do |link| %>
+<!--<p><%# link.link_address %></p>-->
+<%# end %>
 
 <%#= link_to 'Show', group_member %>

@@ -6,7 +6,7 @@
         <strong><%= @group_member.first_name %> <br>
           <%= @group_member.last_name %></strong>
       </h2>
-      <h2><%= @group_member.field_of_study_in_westerdal.name %></h2>
+      <h2><%= @group_member.field_of_study_in_westerdal&.name %></h2>
       <div class="media-reference">
         <i class="fa fa-github"></i>
         <i class="fa fa-linkedin"></i>
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="row group-member-description">
+  <div class="row group-member-description margin-top">
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTabs" role="tablist">
