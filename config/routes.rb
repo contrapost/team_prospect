@@ -43,6 +43,11 @@ Rails.application.routes.draw do
   post 'work_experiences/update'
   delete 'work_experiences/delete'
 
+  get 'news_paragraphs/show'
+  post 'news_paragraphs/save'
+  post 'news_paragraphs/update'
+  delete 'news_paragraphs/delete'
+
   resources :group_members
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
