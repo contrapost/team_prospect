@@ -17,10 +17,14 @@
       <tr>
         <td><%= image_tag news.photo.url %></td>
         <td><%= news.title %></td>
-        <td><%= news.news_text %></td>
-        <td><%= link_to 'Show', news %></td>
-        <td><%= link_to 'Edit', edit_news_path(news) %></td>
-        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% news.news_paragraphs.order(:id).each do |paragraph| %>
+              <p><%= paragraph.paragraph %></p>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', news, class: 'btn btn-default' %></td>
+        <td><%= link_to 'Edit', edit_news_path(news), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Manage paragraphs', news_paragraphs_show_path(news_id: news.id), class: 'btn btn-default' %></td>
       </tr>
   <% end %>
   </tbody>

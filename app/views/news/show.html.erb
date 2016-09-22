@@ -9,7 +9,9 @@
 
 <p>
   <strong>News text:</strong>
-  <%= @news.news_text %>
+  <% @news.news_paragraphs.order(:id).each do |paragraph| %>
+    <p><%= paragraph.paragraph %></p>
+<% end %>
 </p>
 
 <% if admin_signed_in? %>

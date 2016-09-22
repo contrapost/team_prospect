@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<% @news_paragraphs.each do |paragraph| %>
+    <%= form_tag controller: :news_paragraphs, action: :update do %>
+        <div class="field">
+          <%= text_field_tag :paragraph, paragraph.paragraph, required: 'required' %>
+        </div>
+        <%= hidden_field_tag :news_id, @news.id %>
+        <%= hidden_field_tag :news_paragraph_id, paragraph.id %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="actions">
+          <%= submit_tag 'UPDATE' %>
+        </div>
+    <% end %>
+    <div>
+      <%= link_to 'delete', {controller: :news_paragraphs, action: :delete, news_paragraph_id: paragraph.id, news_id: @news.id},
+                  data: {confirm: "Are you sure?"},
+                  method: :delete, class: 'btn btn-warning' %>
+    </div>
+<% end %>
+
+<%= form_tag controller: :news_paragraphs, action: :save do %>
+    <div class="field">
+      <%= text_field_tag :paragraph, nil, placeholder: 'news_paragraph', required: 'required' %>
+    </div>
+    <%= hidden_field_tag :news_id, @news.id %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="actions">
+      <%= submit_tag 'SAVE' %>
+    </div>
+<% end %>
