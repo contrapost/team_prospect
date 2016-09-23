@@ -200,6 +200,21 @@
       div{ border-right: 3px solid #eee;}
     }
   }
+  .group-member-intro{
+    .group-member-name-wrapper{
+      .group-member-name{
+        font-size:30px;
+      }
+    }
+  }
+  .group-member-description{
+    .nav-tabs {
+      li a {
+        padding: 11px 7px;
+      }
+    }
+  }
+
   .footer-container{
     .circle {
       width: 30px;

@@ -8,11 +8,13 @@
       </h2>
       <h2><%= @group_member.field_of_study_in_westerdal&.name %></h2>
       <div class="media-reference">
+
         <i class="fa fa-github"></i>
         <i class="fa fa-linkedin"></i>
       </div>
     </div>
     <div class="col-md-6 no-padding">
+      <!-- TODO: ALEX ADD img-responsive class here plz -->
       <%= image_tag @group_member.photo.url (:medium) %>
     </div>
   </div>
