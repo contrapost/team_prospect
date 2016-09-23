@@ -15,7 +15,7 @@
 2. Install postgersql:
     + Ubuntu:
         - `sudo apt-get update`
-        - `sudo apt-get install libpq-dev` or [visit you best friend](http://stackoverflow.com/a/23836958/5552809)
+        - `sudo apt-get install libpq-dev` or [visit your best friend](http://stackoverflow.com/a/23836958/5552809)
     + OS X:
         - Install [Homebrew](http://brew.sh/) if you don't have one.
         - run `brew install postgres`
@@ -39,8 +39,8 @@
     
 
 ### REQUIREMENTS FOR DEVELOPMENT:
-1. All changes should be made in separate branches. Master branch is used for deployments to heroku, i.e. it should always contain functional version.
-2. Install [imagemagick](http://www.imagemagick.org/script/binary-releases.php) for image management.
+1. All changes should be made in separate branches. Master branch is used for deployments, i.e. it should always contain functional version.
+2. Install [imagemagick](http://www.imagemagick.org/script/binary-releases.php) for image management if you don't have one (i.e. you are using OS X or Windows).
 3. Run `rake db:setup` to populate production database with data from [db:seeds.rb](db/seeds.rb). Here can you find admin user name and password.
 4. To login as admin open [localhost:3000/admin](http://localhost:3000/admin). You can logout by visiting [localhost:3000/admin/logout](http://localhost:3000/admin/logout)
 5. All [static pages](app/views/pages) can be opened in browser by appending `pages/{page_name}` to [localhost:3000](http://localhost:3000) (for example [contact](app/views/pages/contact.html.erb) can be opened by visiting [localhost:3000/pages/contact](http://localhost:3000/pages/cantact)).
