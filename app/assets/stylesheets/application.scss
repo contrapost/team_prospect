@@ -157,16 +157,16 @@
       padding: 33px 80px;
       margin: 0px;
       border-radius: 0px;
-      -webkit-transition: ease-in 2s; /* For Safari 3.1 to 6.0 */
-      transition: ease-in 2s;
+      -webkit-transition: ease-in 1s; /* For Safari 3.1 to 6.0 */
+      transition: ease-in 1s;
     }
     .active a, li a:hover, li a:focus {
       color: white;
       background-color: #334D5C;
-      border: 0;
+      border-color:#334D5c;
       border-bottom: 1px solid #334D5C;
-      -webkit-transition: ease-out 2s; /* For Safari 3.1 to 6.0 */
-      transition: ease-out 2s;
+      -webkit-transition: ease-out 1s; /* For Safari 3.1 to 6.0 */
+      transition: ease-out 1s;
     }
   }
 }
