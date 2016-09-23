@@ -157,12 +157,16 @@
       padding: 33px 80px;
       margin: 0px;
       border-radius: 0px;
+      -webkit-transition: ease-in 1s; /* For Safari 3.1 to 6.0 */
+      transition: ease-in 1s;
     }
     .active a, li a:hover, li a:focus {
       color: white;
       background-color: #334D5C;
-      border: 0;
+      border-color:#334D5c;
       border-bottom: 1px solid #334D5C;
+      -webkit-transition: ease-out 1s; /* For Safari 3.1 to 6.0 */
+      transition: ease-out 1s;
     }
   }
 }
@@ -191,6 +195,26 @@
       margin-top:50%;
     }
   }
+  .home-predescription{
+    .container{
+      div{ border-right: 3px solid #eee;}
+    }
+  }
+  .group-member-intro{
+    .group-member-name-wrapper{
+      .group-member-name{
+        font-size:30px;
+      }
+    }
+  }
+  .group-member-description{
+    .nav-tabs {
+      li a {
+        padding: 11px 7px;
+      }
+    }
+  }
+
   .footer-container{
     .circle {
       width: 30px;
@@ -198,7 +222,7 @@
       left:46%;
 
       .fa {
-        margin-top:10px;
+        margin-top:8px;
       }
     }
   }
