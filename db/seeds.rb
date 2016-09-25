@@ -6,40 +6,194 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+# Admin
 Admin.create(email: 'awesome@admin.com', password: '123456789', password_confirmation: '123456789')
 
-GroupMember.create(first_name: 'Homer', last_name: 'Simpson',
-                   description: 'Homer Jay Simpson is a fictional character and the main protagonist of the American animated television series The Simpsons as the patriarch of the eponymous family. He is voiced by Dan Castellaneta and first appeared on television, along with the rest of his family, in The Tracey Ullman Show short "Good Night" on April 19, 1987. Homer was created and designed by cartoonist Matt Groening while he was waiting in the lobby of James L. Brooks\' office. Groening had been called to pitch a series of shorts based on his comic strip Life in Hell but instead decided to create a new set of characters. He named the character after his father, Homer Groening. After appearing for three seasons on The Tracey Ullman Show, the Simpson family got their own series on Fox that debuted December 17, 1989.
+#Fields of study
 
-Homer and his wife Marge have three children: Bart, Lisa, and Maggie. As the family\'s provider, he works at the Springfield Nuclear Power Plant. Homer embodies several American working class stereotypes: he is a crude, bald, overweight, incompetent, clumsy, lazy, heavy drinking, ignorant and idiotic person; however, he is essentially a decent man and fiercely devoted to his family. Despite the suburban blue-collar routine of his life, he has had a number of remarkable experiences.
+# HOMER
+FieldOfStudyInWesterdal.create(name: 'Programming', description: 'Programming is cool', link: 'https://ourschool.com/studies/programming')
+FieldOfStudyInWesterdal.create(name: 'Intelligent systems', description: 'Intelligent systems are very cool', link: 'https://ourschool.com/studies/intelligent')
+FieldOfStudyInWesterdal.create(name: 'Interactive design', description: 'Interactive design is so cool', link: 'https://ourschool.com/studies/interactive')
+FieldOfStudyInWesterdal.create(name: 'E-business', description: 'E-business is the best', link: 'https://ourschool.com/studies/ebusiness')
 
-In the shorts and earlier episodes, Castellaneta voiced Homer with a loose impression of Walter Matthau; however, during the second and third seasons of the half-hour show, Homer\'s voice evolved to become more robust, to allow the expression of a fuller range of emotions. He has appeared in other media relating to The Simpsons – including video games, The Simpsons Movie, The Simpsons Ride, commercials and comic books – and inspired an entire line of merchandise. His signature catchphrase, the annoyed grunt "Doh!", has been included in The New Oxford Dictionary of English since 1998 and the Oxford English Dictionary since 2001.
+#Group members
+homer = GroupMember.create(first_name: 'Homer', last_name: 'Simpson', phone: '23456789', email: 'homer@simpson.com')
+homer.field_of_study_in_westerdal_id = 4
+homer_skill = Skill.create(name: 'git')
+homer_skill2 = Skill.create(name: 'statistic')
 
-Homer is one of the most influential characters in the history of television. The British newspaper The Sunday Times described him as "the greatest comic creation of [modern] time". He was named the greatest character "of the last 20 years" in 2010 by Entertainment Weekly, was ranked the second greatest cartoon character by TV Guide, behind Bugs Bunny, and was voted the greatest television character of all time by Channel 4 viewers. For voicing Homer, Castellaneta has won four Primetime Emmy Awards for Outstanding Voice-Over Performance and a special-achievement Annie Award. In 2000, Homer and his family were awarded a star on the Hollywood Walk of Fame.',
-                   phone: '32517489', email: 'homer@simpson.com')
-GroupMember.create(first_name: 'Bart', last_name: 'Simpson',
-                   description: 'Bartholomew JoJo "Bart" Simpson is a fictional character in the American animated television series The Simpsons and part of the Simpson family. He is voiced by Nancy Cartwright and first appeared on television in The Tracey Ullman Show short "Good Night" on April 19, 1987. Cartoonist Matt Groening created and designed Bart while waiting in the lobby of James L. Brooks\' office. Groening had been called to pitch a series of shorts based on his comic strip, Life in Hell, but instead decided to create a new set of characters. While the rest of the characters were named after Groening\'s family members, Bart\'s name is an anagram of the word brat. After appearing on The Tracey Ullman Show for three years, the Simpson family received its own series on Fox, which debuted December 17, 1989.
+homer.skills << homer_skill
+homer.skills << homer_skill2
 
-At ten years old, Bart is the eldest child and only son of Homer and Marge, and the brother of Lisa and Maggie. Bart\'s most prominent and popular character traits are his mischievousness, rebelliousness and disrespect for authority. He has appeared in other media relating to The Simpsons – including video games, The Simpsons Movie, The Simpsons Ride, commercials, and comic books – and inspired an entire line of merchandise.
+homer_bio = Bio.create(paragraph: "First paragraph of Homer's bio")
+homer_bio2 = Bio.create(paragraph: "Second paragraph of Homer's bio")
+homer.bios << homer_bio
+homer.bios << homer_bio2
 
-In casting, Nancy Cartwright originally planned to audition for the role of Lisa, while Yeardley Smith tried out for Bart. Smith\'s voice was too high for a boy, so she was given the role of Lisa. Cartwright found that Lisa was not interesting at the time, so instead auditioned for Bart, which she thought was a better role.[1]
+homer_education = Education.create(start: DateTime.now, end: DateTime.now, institution_name: 'Harvard', field_of_study: 'rocket science')
+homer.educations << homer_education
 
-Hallmarks of the character include his chalkboard gags in the opening sequence; his prank calls to Moe; and his catchphrases "Eat my shorts", "¡Ay, caramba!", and "Don\'t have a cow, man!"
+homer_link = Link.create(link_address: 'https://www.github.com/homer')
+homer_link2 = Link.create(link_address: 'https://www.linkedin.com/homer')
 
-During the first two seasons of The Simpsons, Bart was the show\'s breakout character and "Bartmania" ensued, spawning Bart Simpson-themed merchandise touting his rebellious attitude and pride at underachieving, which caused many parents and educators to cast him as a bad role model for children. Around the third season, the series started to focus more on the family as a whole, though Bart still remains a prominent character. Time named Bart one of the 100 most important people of the 20th century, and he was named "entertainer of the year" in 1990 by Entertainment Weekly. Nancy Cartwright has won several awards for voicing Bart, including a Primetime Emmy Award in 1992 and an Annie Award in 1995. In 2000, Bart, along with the rest of his family, was awarded a star on the Hollywood Walk of Fame.',
-                   phone: '23653476', email: 'bart@simpson.com')
+homer.links << homer_link
+homer.links << homer_link2
 
-News.create(title: 'News Number 1', news_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam cursus ante enim, quis efficitur nibh gravida quis. Nam ut ornare ligula. Vivamus ultricies tellus non neque gravida, et interdum ex facilisis. Nunc dolor erat, placerat sit amet lobortis nec, efficitur in lectus. Integer posuere rhoncus justo in mattis. Quisque sit amet enim sit amet diam scelerisque cursus. Praesent fringilla dolor non nibh imperdiet, ut lacinia ipsum ultricies. Vestibulum quis urna tempor, porttitor lectus sed, convallis sapien. Aenean molestie in nulla sed blandit. Ut ut sapien nec metus convallis euismod at at neque. Nullam at leo tortor.
+homer_personal_text = PersonalText.create(paragraph: "I'm Homer and I'm cool")
+homer_personal_text2 = PersonalText.create(paragraph: 'Potato cheeps!!! M-m-m-m-m')
 
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur rutrum vulputate tellus, at gravida tellus hendrerit auctor. Vivamus nisl velit, tincidunt id lacinia at, mattis ut quam. Proin id venenatis orci. Nunc lectus nulla, imperdiet eget felis ullamcorper, scelerisque eleifend augue. Vestibulum non nibh eu magna fringilla fringilla. Aliquam accumsan, urna non tempus gravida, risus magna dictum diam, id ullamcorper nunc risus eget sapien. Donec porta lobortis justo ut vestibulum.
+homer.personal_texts << homer_personal_text
+homer.personal_texts << homer_personal_text2
 
-Donec vel ante arcu. Aliquam a convallis orci. Duis fermentum, leo at facilisis aliquet, risus enim semper lectus, et posuere libero justo eget diam. Praesent vel elit vel metus tincidunt venenatis. Donec congue mauris nunc, eget tincidunt neque varius a. Fusce elementum, mi eget scelerisque mattis, ligula ipsum elementum nisi, et aliquam libero urna nec massa. Praesent eu odio finibus, ullamcorper metus non, auctor massa. In malesuada eleifend est in laoreet. Sed eu leo at velit vestibulum consectetur id vitae nibh. Vivamus sit amet purus sodales odio convallis posuere. Vivamus pellentesque ornare sapien, nec pretium velit convallis a. Integer pretium pharetra nulla at volutpat. Donec mattis mi ut mi semper luctus. Quisque non nisi eget erat varius placerat.
+homer_work_experience = WorkExperience.create(start: DateTime.now, end: DateTime.now, company: 'Nuclear power plant', position: 'Operational chief', optional_info: 'dangerous one')
 
-Proin vitae varius mi. Nullam varius lobortis metus, non auctor elit efficitur blandit. Vivamus tellus mi, commodo ut viverra quis, ultrices a dui. Proin varius vehicula urna eget vestibulum. In hac habitasse platea dictumst. Curabitur nisl ante, eleifend id ultricies sed, tincidunt non urna. Proin ornare sit amet enim in viverra. Proin at ante mi. Fusce sagittis vestibulum fermentum. Vivamus tincidunt varius leo, vitae fermentum dui congue dapibus.
+homer.work_experiences << homer_work_experience
 
-')
+homer.save
 
-News.create(title: 'News Number 2', news_text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?')
+# BARNEY
+barney = GroupMember.create(first_name: 'Barney', last_name: 'Gumble', phone: '32546798', email: 'barney@gumble.com')
+barney.field_of_study_in_westerdal_id = 2
+barney_skill = Skill.create(name: 'git')
+barney_skill2 = Skill.create(name: 'java')
 
-News.create(title: 'News Number 2', news_text: 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?')
+barney.skills << barney_skill
+barney.skills << barney_skill2
+
+barney_bio = Bio.create(paragraph: "First paragraph of Barney's bio")
+barney_bio2 = Bio.create(paragraph: "Second paragraph of Barney's bio")
+barney.bios << barney_bio
+barney.bios << barney_bio2
+
+barney_education = Education.create(start: DateTime.now, end: DateTime.now, institution_name: 'Oxford', field_of_study: 'cosmology')
+barney.educations << barney_education
+
+barney_link = Link.create(link_address: 'https://www.github.com/barney')
+barney_link2 = Link.create(link_address: 'https://www.linkedin.com/barney')
+
+barney.links << barney_link
+barney.links << barney_link2
+
+barney_personal_text = PersonalText.create(paragraph: "I'm Barney and I'm cool")
+barney_personal_text2 = PersonalText.create(paragraph: 'How european. Burp!')
+
+barney.personal_texts << barney_personal_text
+barney.personal_texts << barney_personal_text2
+
+barney_work_experience = WorkExperience.create(start: DateTime.now, end: DateTime.now, company: 'Chopper firm', position: 'Chopper pilot', optional_info: 'very dangerous one')
+
+barney.work_experiences << barney_work_experience
+
+barney.save
+
+# Moe Szyslak
+moe = GroupMember.create(first_name: 'Moe', last_name: 'Szyslak', phone: '85697421', email: 'moe@szyslak.com')
+
+moe.field_of_study_in_westerdal_id = 1
+
+moe_skill = Skill.create(name: 'git')
+moe_skill2 = Skill.create(name: 'c#')
+moe_skill3 = Skill.create(name: 'java')
+moe_skill4 = Skill.create(name: 'c')
+moe.skills << moe_skill
+moe.skills << moe_skill2
+moe.skills << moe_skill3
+moe.skills << moe_skill4
+
+moe_bio = Bio.create(paragraph: "First paragraph of Moe's bio")
+moe_bio2 = Bio.create(paragraph: "Second paragraph of Moe's bio")
+moe.bios << moe_bio
+moe.bios << moe_bio2
+
+moe_education = Education.create(start: DateTime.now, end: DateTime.now, institution_name: 'Sorbonne', field_of_study: 'chemistry')
+moe.educations << moe_education
+
+moe_link = Link.create(link_address: 'https://www.github.com/moe')
+moe_link2 = Link.create(link_address: 'https://www.linkedin.com/moe')
+moe.links << moe_link
+moe.links << moe_link2
+
+moe_personal_text = PersonalText.create(paragraph: "I'm Moe and I'm cool")
+moe_personal_text2 = PersonalText.create(paragraph: 'Get out!')
+moe.personal_texts << moe_personal_text
+moe.personal_texts << moe_personal_text2
+
+moe_work_experience = WorkExperience.create(start: DateTime.now, end: DateTime.now, company: 'Moe’s tavern', position: 'bartender/owner', optional_info: 'beer disposal')
+moe.work_experiences << moe_work_experience
+
+moe.save
+
+# Chief Wiggum
+wiggum = GroupMember.create(first_name: 'Chief', last_name: 'Wiggum', phone: '91191111', email: 'wiggum@police.com')
+
+wiggum.field_of_study_in_westerdal_id = 3
+
+wiggum_skill = Skill.create(name: 'git')
+wiggum_skill2 = Skill.create(name: 'algorithms')
+wiggum_skill3 = Skill.create(name: 'data structures')
+wiggum_skill4 = Skill.create(name: 'c')
+wiggum.skills << wiggum_skill
+wiggum.skills << wiggum_skill2
+wiggum.skills << wiggum_skill3
+wiggum.skills << wiggum_skill4
+
+wiggum_bio = Bio.create(paragraph: "First paragraph of Wiggum's bio")
+wiggum_bio2 = Bio.create(paragraph: "Second paragraph of Wiggum's bio")
+wiggum.bios << wiggum_bio
+wiggum.bios << wiggum_bio2
+
+wiggum_education = Education.create(start: DateTime.now, end: DateTime.now, institution_name: 'University of Oslo', field_of_study: 'low science')
+wiggum.educations << wiggum_education
+
+wiggum_link = Link.create(link_address: 'https://www.github.com/wiggum')
+wiggum_link2 = Link.create(link_address: 'https://www.linkedin.com/wiggum')
+wiggum.links << wiggum_link
+wiggum.links << wiggum_link2
+
+wiggum_personal_text = PersonalText.create(paragraph: "I'm Wiggum and I'm suppper police officer")
+wiggum_personal_text2 = PersonalText.create(paragraph: 'Plant the evidence on them!')
+wiggum.personal_texts << wiggum_personal_text
+wiggum.personal_texts << wiggum_personal_text2
+
+wiggum_work_experience = WorkExperience.create(start: DateTime.now, end: DateTime.now, company: 'Police office of Springfield', position: 'Police Chief', optional_info: 'a conscious pun')
+wiggum.work_experiences << wiggum_work_experience
+
+wiggum.save
+
+# News
+
+# First
+news = News.create(title: 'Non-breaking news')
+
+news_paragraph = NewsParagraph.create(paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum, sem at eleifend tristique, elit neque pretium libero, vel posuere mauris nunc vitae libero. Proin ac efficitur turpis, sit amet rhoncus purus. Morbi vestibulum mauris sit amet ligula mattis imperdiet. Mauris imperdiet dolor arcu, ut eleifend mauris vulputate in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Aenean tincidunt in diam vitae scelerisque. Maecenas porta facilisis felis, in commodo mi congue at. Nullam tempus finibus mauris vel malesuada. Fusce eget metus vitae metus congue maximus. Integer nec elit in lectus vestibulum convallis nec faucibus libero. Cras vel gravida massa, et scelerisque eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris tristique ac dolor at molestie.')
+news_paragraph2 = NewsParagraph.create(paragraph: 'Sed pretium placerat purus quis varius. Nam dictum libero id sapien malesuada tincidunt. Suspendisse potenti. Morbi id tortor aliquam felis sodales venenatis. Nulla sodales diam turpis, eu congue urna pharetra vitae. Aliquam placerat facilisis quam quis faucibus. Nunc nec egestas ligula. Proin condimentum sit amet est vitae laoreet. Proin congue posuere lectus ac ullamcorper. Phasellus quis ante sed sem ornare aliquam. Fusce at nunc eu lorem mollis tempus vel at arcu. Mauris iaculis congue orci, sed tincidunt nunc imperdiet nec.')
+news_paragraph3 = NewsParagraph.create(paragraph: 'Maecenas blandit risus urna, sed viverra ante consectetur vitae. Aliquam eget quam sed ipsum interdum sodales. Pellentesque eget facilisis lorem. Quisque dolor magna, facilisis quis semper ut, molestie at urna. Suspendisse ac mauris tempor, maximus enim vitae, accumsan nisl. Mauris porta molestie vestibulum. Cras in lorem nec metus congue aliquam nec vitae neque. Donec eu lacus sagittis, cursus nunc nec, scelerisque neque. Duis nec rutrum leo, et ullamcorper eros. Curabitur aliquam id nisl sed posuere.')
+news_paragraph4 = NewsParagraph.create(paragraph: 'Curabitur consequat turpis elit, tincidunt rhoncus turpis viverra id. Sed dignissim sodales turpis, ac ultrices lectus tempus vitae. Integer a luctus lacus, sed ornare turpis. Morbi euismod ligula sollicitudin lorem placerat, in aliquam turpis convallis. Curabitur faucibus augue leo, quis lobortis orci laoreet et. Vestibulum feugiat commodo felis, quis viverra purus dictum vehicula. Nulla facilisi. Fusce sodales risus bibendum efficitur ultricies.')
+news_paragraph5 = NewsParagraph.create(paragraph: 'Proin sagittis faucibus augue, sed consequat mauris finibus nec. In rutrum iaculis viverra. Nam vulputate lacus id erat elementum, sed faucibus arcu fermentum. Integer at velit lacus. Proin elementum eros sem, nec rhoncus lorem tincidunt quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed at ipsum metus.')
+
+news.news_paragraphs << news_paragraph
+news.news_paragraphs << news_paragraph2
+news.news_paragraphs << news_paragraph3
+news.news_paragraphs << news_paragraph4
+news.news_paragraphs << news_paragraph5
+
+news.save
+
+# Second
+news2 = News.create(title: 'Breaking news2')
+
+news2_paragraph = NewsParagraph.create(paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dictum, sem at eleifend tristique, elit neque pretium libero, vel posuere mauris nunc vitae libero. Proin ac efficitur turpis, sit amet rhoncus purus. Morbi vestibulum mauris sit amet ligula mattis imperdiet. Mauris imperdiet dolor arcu, ut eleifend mauris vulputate in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Aenean tincidunt in diam vitae scelerisque. Maecenas porta facilisis felis, in commodo mi congue at. Nullam tempus finibus mauris vel malesuada. Fusce eget metus vitae metus congue maximus. Integer nec elit in lectus vestibulum convallis nec faucibus libero. Cras vel gravida massa, et scelerisque eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris tristique ac dolor at molestie.')
+news2_paragraph2 = NewsParagraph.create(paragraph: 'Sed pretium placerat purus quis varius. Nam dictum libero id sapien malesuada tincidunt. Suspendisse potenti. Morbi id tortor aliquam felis sodales venenatis. Nulla sodales diam turpis, eu congue urna pharetra vitae. Aliquam placerat facilisis quam quis faucibus. Nunc nec egestas ligula. Proin condimentum sit amet est vitae laoreet. Proin congue posuere lectus ac ullamcorper. Phasellus quis ante sed sem ornare aliquam. Fusce at nunc eu lorem mollis tempus vel at arcu. Mauris iaculis congue orci, sed tincidunt nunc imperdiet nec.')
+news2_paragraph3 = NewsParagraph.create(paragraph: 'Maecenas blandit risus urna, sed viverra ante consectetur vitae. Aliquam eget quam sed ipsum interdum sodales. Pellentesque eget facilisis lorem. Quisque dolor magna, facilisis quis semper ut, molestie at urna. Suspendisse ac mauris tempor, maximus enim vitae, accumsan nisl. Mauris porta molestie vestibulum. Cras in lorem nec metus congue aliquam nec vitae neque. Donec eu lacus sagittis, cursus nunc nec, scelerisque neque. Duis nec rutrum leo, et ullamcorper eros. Curabitur aliquam id nisl sed posuere.')
+news2_paragraph4 = NewsParagraph.create(paragraph: 'Curabitur consequat turpis elit, tincidunt rhoncus turpis viverra id. Sed dignissim sodales turpis, ac ultrices lectus tempus vitae. Integer a luctus lacus, sed ornare turpis. Morbi euismod ligula sollicitudin lorem placerat, in aliquam turpis convallis. Curabitur faucibus augue leo, quis lobortis orci laoreet et. Vestibulum feugiat commodo felis, quis viverra purus dictum vehicula. Nulla facilisi. Fusce sodales risus bibendum efficitur ultricies.')
+news2_paragraph5 = NewsParagraph.create(paragraph: 'Proin sagittis faucibus augue, sed consequat mauris finibus nec. In rutrum iaculis viverra. Nam vulputate lacus id erat elementum, sed faucibus arcu fermentum. Integer at velit lacus. Proin elementum eros sem, nec rhoncus lorem tincidunt quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed at ipsum metus.')
+
+news2.news_paragraphs << news2_paragraph
+news2.news_paragraphs << news2_paragraph2
+news2.news_paragraphs << news2_paragraph3
+news2.news_paragraphs << news2_paragraph4
+news2.news_paragraphs << news2_paragraph5
+
+news2.save
+
