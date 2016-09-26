@@ -155,11 +155,19 @@ body{
   margin-top: 100px;
   .tab-content {
     padding: 65px;
-    background-color: #e8e9fe;
+    background-color: #e7e7e7;
   }
   .nav-tabs {
     border-bottom: 5px solid #334D5C;
+
+    li a, .active a, li a:hover, li a:focus{
+      border-bottom:1px solid #334d5c;
+      font-weight:bold;
+
+    }
     li a {
+      color:black;
+      background-color:#e7e7e7;
       padding: 33px 80px;
       margin: 0px;
       border-radius: 0px;
@@ -168,9 +176,8 @@ body{
     }
     .active a, li a:hover, li a:focus {
       color: white;
-      background-color: #334D5C;
+      background-color:#334D5C;
       border-color:#334D5c;
-      border-bottom: 1px solid #334D5C;
       -webkit-transition: ease-out 0.5s; /* For Safari 3.1 to 6.0 */
       transition: ease-out 0.5s;
     }
