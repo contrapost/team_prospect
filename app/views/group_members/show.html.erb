@@ -37,17 +37,26 @@
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="description">
           <% @group_member.bios.order(:id).each do |bio| %>
-              <p><%= bio.paragraph %></p>
+              <div class="col-xs-12">
+                <p><%= bio.paragraph %></p>
+              </div>
           <% end %>
         </div>
         <div role="tabpanel" class="tab-pane" id="experience">
           <% @group_member.work_experiences.each do |experience| %>
-              <p><%= experience.start.strftime('%d.%m.%Y') %> <%= experience.end.nil? ? default_date : experience.end.strftime('%d.%m.%Y') %> <%= experience.company %> <%= experience.position %> <%= experience.optional_info %></p>
+              <div class="col-xs-12 col-md-6">
+                <strong><%= experience.start.strftime('%d.%m.%Y') %> - <%= experience.end.nil? ? default_date : experience.end.strftime('%d.%m.%Y') %> | <%= experience.company %> </strong>
+                <p><%= experience.position %> <%= experience.optional_info %></p>
+
+              </div>
           <% end %>
         </div>
         <div role="tabpanel" class="tab-pane" id="education">
           <% @group_member.educations.each do |education| %>
-              <p><%= education.start.strftime('%d.%m.%Y') %> <%= education.end.nil? ? default_date : education.end.strftime('%d.%m.%Y') %> <%= education.institution_name %> <%= education.field_of_study %></p>
+              <div class="col-xs-12 col-md-6">
+              <strong><%= education.start.strftime('%d.%m.%Y') %> <%= education.end.nil? ? default_date : education.end.strftime('%d.%m.%Y') %> | <%= education.institution_name %> </strong>
+              <p><%= education.field_of_study %></p>
+              </div>
           <% end %>
         </div>
       </div>
