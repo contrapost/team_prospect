@@ -15,7 +15,7 @@
           <%= text_field_tag :position, work_experience.position, required: 'required' %>
         </div>
         <div class="field">
-          <%= text_field_tag :optional_info, work_experience.optional_info, required: 'required' %>
+          <%= text_field_tag :optional_info, work_experience.optional_info %>
         </div>
         <%= hidden_field_tag :group_member_id, @group_member.id %>
         <%= hidden_field_tag :work_experience_id, work_experience.id %>
