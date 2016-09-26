@@ -16,7 +16,7 @@ class BiosController < ApplicationController
 
   def update
     bio = Bio.find(params[:bio_id])
-    bio.name = params[:paragraph]
+    bio.paragraph = params[:paragraph]
     bio.save
     respond_to do |format|
       format.html { redirect_to bios_show_path(group_member_id: params[:group_member_id]), notice: 'Paragraph was successfully updated.' }
@@ -24,7 +24,7 @@ class BiosController < ApplicationController
   end
 
   def delete
-    bio = PersonalText.find(params[:bio_id])
+    bio = Bio.find(params[:bio_id])
     bio.destroy
     respond_to do |format|
       format.html { redirect_to bios_show_path(group_member_id: params[:group_member_id]), notice: 'Paragraph was successfully destroyed.' }

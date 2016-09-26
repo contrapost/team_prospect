@@ -3,7 +3,7 @@
 <% @bios.each do |bio| %>
     <%= form_tag controller: :bios, action: :update do %>
         <div class="field">
-          <%= text_field_tag :name, bio.paragraph, required: 'required' %>
+          <%= text_field_tag :paragraph, bio.paragraph, required: 'required' %>
         </div>
         <%= hidden_field_tag :group_member_id, @group_member.id %>
         <%= hidden_field_tag :bio_id, bio.id %>
