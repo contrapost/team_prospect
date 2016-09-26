@@ -4,10 +4,7 @@
         <div class="col-xs-12 col-md-4">
           <%= link_to group_member do %>
               <div class="col-xs-12">
-                <!-- TODO: ALEX can you implement img-responsive class here?
-                           WHY THIS NO WORK? :(
-                -->
-                <%= image_tag group_member.photo.url (:thumb), :class => "img-responsive" %>
+                <%= image_tag(group_member.photo.url, class: 'img-responsive') %>
               </div>
               <div class="col-xs-12 text-center">
                 <h2><%= group_member.first_name %> <%= group_member.last_name %></h2>
