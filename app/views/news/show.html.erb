@@ -14,6 +14,18 @@
 <% end %>
 </p>
 
+<p>
+  <strong>Publisert: </strong>
+  <%= @news.created_at.strftime('%d.%m.%Y') %>
+</p>
+
+<% if @news.created_at != @news.updated_at %>
+    <p>
+      <strong>Oppdatert: </strong>
+      <%= @news.updated_at.strftime('%d.%m.%Y') %>
+    </p>
+<% end %>
+
 <% if admin_signed_in? %>
   <%= link_to 'Edit', edit_news_path(@news) %> |
   <%= link_to 'Back', admin_news_path %>
