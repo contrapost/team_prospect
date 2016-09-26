@@ -16,7 +16,7 @@ class PersonalTextsController < ApplicationController
 
   def update
     personal_text = PersonalText.find(params[:personal_text_id])
-    personal_text.name = params[:paragraph]
+    personal_text.paragraph = params[:paragraph]
     personal_text.save
     respond_to do |format|
       format.html { redirect_to personal_texts_show_path(group_member_id: params[:group_member_id]), notice: 'Paragraph was successfully updated.' }
