@@ -142,6 +142,7 @@ body{
   display:flex;
   .group-member-name-wrapper {
     padding-top: 30px;
+    background-color:#e7e7e7;
     .group-member-name {
       text-transform: uppercase;
       font-size: 60px;
@@ -153,7 +154,18 @@ body{
     }
   }
 }
-
+.group-member-teaser{
+  margin-top:50px;
+  display:flex;
+  .group-member-personal-text{
+    background-color:#334D5C;
+    color:white;
+    padding:30px 10px;
+  }
+  .group-member-skills{
+    background-color:#e7e7e7;
+  }
+}
 .group-member-description {
   margin-top: 100px;
   .tab-content {
