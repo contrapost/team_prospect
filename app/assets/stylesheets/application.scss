@@ -18,7 +18,10 @@
 body{
   background-color:#eee;
 }
-
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
 .container-yield {
   margin-top: 51px;
 }
@@ -193,6 +196,7 @@ body{
   h2,h4 {
     font-size: 15px;
   }
+  .gi-2x{font-size:1em;}
 
   .navbar {
     padding-right: 15px;
@@ -223,7 +227,7 @@ body{
   .group-member-description{
     .nav-tabs {
       li a {
-        padding: 11px 7px;
+        padding: 20px 10px;
       }
     }
   }
