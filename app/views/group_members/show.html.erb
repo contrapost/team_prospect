@@ -1,3 +1,5 @@
+<% default_date = 'nå' %>
+
 <div class="container">
   <div class="row group-member-intro">
     <div class="col-md-6 group-member-name-wrapper">
@@ -40,12 +42,12 @@
         </div>
         <div role="tabpanel" class="tab-pane" id="experience">
           <% @group_member.work_experiences.each do |experience| %>
-              <p><%= experience.company %></p>
+              <p><%= experience.start.strftime('%d.%m.%Y') %> <%= experience.end.nil? ? default_date : experience.end.strftime('%d.%m.%Y') %> <%= experience.company %> <%= experience.position %> <%= experience.optional_info %></p>
           <% end %>
         </div>
         <div role="tabpanel" class="tab-pane" id="education">
           <% @group_member.educations.each do |education| %>
-              <p><%= education.institution_name %></p>
+              <p><%= education.start.strftime('%d.%m.%Y') %> <%= education.end.nil? ? default_date : education.end.strftime('%d.%m.%Y') %> <%= education.institution_name %> <%= education.field_of_study %></p>
           <% end %>
         </div>
       </div>
