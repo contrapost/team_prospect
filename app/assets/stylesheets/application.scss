@@ -160,6 +160,8 @@ body{
 .group-member-teaser{
   margin-top:50px;
   display:flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   .group-member-personal-text{
     background-color:#334D5C;
     color:white;
@@ -233,7 +235,10 @@ body{
     }
   }
   .group-member-intro{
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
     .group-member-name-wrapper{
+      padding-bottom:30px;
       .group-member-name{
         font-size:30px;
       }
