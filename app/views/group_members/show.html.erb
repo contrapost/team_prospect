@@ -21,33 +21,67 @@
     </div>
   </div>
 
-  <div class="row group-member-description margin-top">
+  <div class="row group-member-teaser">
+    <div class="col-xs-12 col-md-6 group-member-personal-text text-center">
+      <% @group_member.personal_texts.each do |text| %>
+          <h2><i class="fa fa-quote-left fa-1x"></i>
+            <%= text.paragraph %> <i class="fa fa-quote-right fa-1x"></i>
+          </h2>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-md-6 group-member-skills">
+      <h2><strong>Skills</strong></h2>
+      <% @group_member.skills.each do |skill| %>
+          <div class="col-xs-12 col-md-6">
+            <p><i class="glyphicon glyphicon-ok"></i> <%= skill.name %></p>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="row group-member-description">
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTabs" role="tablist">
         <li role="presentation" class="active">
-          <a href="#description" aria-controls="description" role="tab" data-toggle="tab">Biografi</a></li>
+          <a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-star gi-2x"></i>
+            Biografi</a></li>
         <li role="presentation">
-          <a href="#experience" aria-controls="experience" role="tab" data-toggle="tab">Arbeidserfaring</a></li>
+          <a href="#experience" aria-controls="experience" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-pencil gi-2x"></i>
+            Arbeidserfaring</a></li>
         <li role="presentation">
-          <a href="#education" aria-controls="education" role="tab" data-toggle="tab">Utdanning</a></li>
+          <a href="#education" aria-controls="education" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-education  gi-2x"></i>
+            Utdanning</a></li>
       </ul>
 
       <!-- Tab panes -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="description">
           <% @group_member.bios.order(:id).each do |bio| %>
-              <p><%= bio.paragraph %></p>
+              <div class="col-xs-12">
+                <p><%= bio.paragraph %></p>
+              </div>
           <% end %>
         </div>
         <div role="tabpanel" class="tab-pane" id="experience">
           <% @group_member.work_experiences.each do |experience| %>
-              <p><%= experience.start.strftime('%d.%m.%Y') %> <%= experience.end.nil? ? default_date : experience.end.strftime('%d.%m.%Y') %> <%= experience.company %> <%= experience.position %> <%= experience.optional_info %></p>
+              <div class="col-xs-12 col-md-6">
+                <strong><%= experience.start.strftime('%d.%m.%Y') %>
+                  - <%= experience.end.nil? ? default_date : experience.end.strftime('%d.%m.%Y') %>
+                  | <%= experience.company %> </strong>
+                <p><%= experience.position %> <%= experience.optional_info %></p>
+
+              </div>
           <% end %>
         </div>
         <div role="tabpanel" class="tab-pane" id="education">
           <% @group_member.educations.each do |education| %>
-              <p><%= education.start.strftime('%d.%m.%Y') %> <%= education.end.nil? ? default_date : education.end.strftime('%d.%m.%Y') %> <%= education.institution_name %> <%= education.field_of_study %></p>
+              <div class="col-xs-12 col-md-6">
+                <strong><%= education.start.strftime('%d.%m.%Y') %> <%= education.end.nil? ? default_date : education.end.strftime('%d.%m.%Y') %>
+                  | <%= education.institution_name %> </strong>
+                <p><%= education.field_of_study %></p>
+              </div>
           <% end %>
         </div>
       </div>

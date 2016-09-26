@@ -15,6 +15,13 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body{
+  background-color:#eee;
+}
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
 .container-yield {
   margin-top: 51px;
 }
@@ -132,8 +139,10 @@
 
 .group-member-intro {
   margin-top: 25px;
+  display:flex;
   .group-member-name-wrapper {
-    margin-top: 30px;
+    padding-top: 30px;
+    background-color:#e7e7e7;
     .group-member-name {
       text-transform: uppercase;
       font-size: 60px;
@@ -145,28 +154,47 @@
     }
   }
 }
-
+.group-member-teaser{
+  margin-top:50px;
+  display:flex;
+  .group-member-personal-text{
+    background-color:#334D5C;
+    color:white;
+    padding:30px 10px;
+  }
+  .group-member-skills{
+    background-color:#e7e7e7;
+  }
+}
 .group-member-description {
+  margin-top: 100px;
   .tab-content {
     padding: 65px;
-    background-color: #e8e9fe;
+    padding-bottom: 100px;
+    background-color: #e7e7e7;
   }
   .nav-tabs {
     border-bottom: 5px solid #334D5C;
+
+    li a, .active a, li a:hover, li a:focus{
+      font-weight:bold;
+
+    }
     li a {
+      color:black;
+      background-color:#e7e7e7;
       padding: 33px 80px;
       margin: 0px;
       border-radius: 0px;
-      -webkit-transition: ease-in 1s; /* For Safari 3.1 to 6.0 */
-      transition: ease-in 1s;
+      -webkit-transition: ease-in 0.5s; /* For Safari 3.1 to 6.0 */
+      transition: ease-in 0.5s;
     }
     .active a, li a:hover, li a:focus {
       color: white;
-      background-color: #334D5C;
+      background-color:#334D5C;
       border-color:#334D5c;
-      border-bottom: 1px solid #334D5C;
-      -webkit-transition: ease-out 1s; /* For Safari 3.1 to 6.0 */
-      transition: ease-out 1s;
+      -webkit-transition: ease-out 0.5s; /* For Safari 3.1 to 6.0 */
+      transition: ease-out 0.5s;
     }
   }
 }
@@ -180,6 +208,7 @@
   h2,h4 {
     font-size: 15px;
   }
+  .gi-2x{font-size:1em;}
 
   .navbar {
     padding-right: 15px;
@@ -210,7 +239,7 @@
   .group-member-description{
     .nav-tabs {
       li a {
-        padding: 11px 7px;
+        padding: 20px 10px;
       }
     }
   }
