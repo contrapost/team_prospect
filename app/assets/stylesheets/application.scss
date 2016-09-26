@@ -136,8 +136,9 @@ body{
 
 .group-member-intro {
   margin-top: 25px;
+  display:flex;
   .group-member-name-wrapper {
-    margin-top: 30px;
+    padding-top: 30px;
     .group-member-name {
       text-transform: uppercase;
       font-size: 60px;
@@ -151,6 +152,7 @@ body{
 }
 
 .group-member-description {
+  margin-top: 100px;
   .tab-content {
     padding: 65px;
     background-color: #e8e9fe;
@@ -161,16 +163,16 @@ body{
       padding: 33px 80px;
       margin: 0px;
       border-radius: 0px;
-      -webkit-transition: ease-in 1s; /* For Safari 3.1 to 6.0 */
-      transition: ease-in 1s;
+      -webkit-transition: ease-in 0.5s; /* For Safari 3.1 to 6.0 */
+      transition: ease-in 0.5s;
     }
     .active a, li a:hover, li a:focus {
       color: white;
       background-color: #334D5C;
       border-color:#334D5c;
       border-bottom: 1px solid #334D5C;
-      -webkit-transition: ease-out 1s; /* For Safari 3.1 to 6.0 */
-      transition: ease-out 1s;
+      -webkit-transition: ease-out 0.5s; /* For Safari 3.1 to 6.0 */
+      transition: ease-out 0.5s;
     }
   }
 }
