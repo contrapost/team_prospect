@@ -14,9 +14,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import 'https://fonts.googleapis.com/css?family=Oxygen';
 
 body{
   background-color:#eee;
+  font-family: 'Oxygen', sans-serif;
+  font-size:18px;
 }
 .gi-2x{font-size: 2em;}
 .gi-3x{font-size: 3em;}
@@ -254,12 +257,17 @@ hr.star-light:after {
 
 /*=== MEDIA QUERIES===*/
 @media only screen and (min-width: 320px) and(max-width: 768px) {
+  body{
+    font-size:14px;
+  }
   h2,h4 {
     font-size: 15px;
   }
   .gi-2x{font-size:1em;}
 
-
+  .home-header:after{
+    background-position-y:0px;
+  }
   .navbar-default {
     .navbar-toggle:focus {
       background-color:#334D5c;
