@@ -1,4 +1,4 @@
-<div class="row home-header">
+<div class="row home-header" xmlns="http://www.w3.org/1999/html">
   <div class="inner text-center">
     <h2>VI ER KLARE FOR <br> HOVEDPROSJEKT 2017</h2>
     <%= link_to 'KONTAKT OSS', contact_path, type: 'button', class: 'btn btn-primary' %>
@@ -36,8 +36,10 @@
         <%= image_tag News.last.photo.url, class: 'img-responsive' %>
       </div>
       <div class="col-md-8">
-        <!-- TODO: ALEXANDER, implement first paragraph here please? -->
-        <!-- TODO: ALEXANDER, implement first paragraph here please? -->
+        <%= News.last.news_paragraphs.first.paragraph %>
+        <%= link_to '<les mer>', News.last %>
+        <br/>
+        <br/>
         <%= link_to 'Bli kjent med gruppemedlemmene!', group_members_url, type: 'button', class: 'btn btn-success' %>
       </div>
     </div>
