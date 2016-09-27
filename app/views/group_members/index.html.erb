@@ -20,9 +20,11 @@
   </div>
 </div>
 
+<% counter = 0 %>
 <div class="container">
   <div class="row group-member-page">
     <% @group_members.order(:id).each do |group_member| %>
+        <% counter += 1 %>
         <div class="col-xs-12 col-md-4">
           <%= link_to group_member do %>
               <div class="col-xs-12">
@@ -34,23 +36,13 @@
           <% end %>
 
         </div>
+        <% if counter == 3 %>
+            <div class='clearfix'></div>
+        <% end %>
 
     <% end %>
   </div>
 </div>
-<script type="text/javascript" charset="utf-8">
-$(".group-member-page > div:nth-child(3n)").after("<div class='clearfix'></div>");
-</script>
-
-<!--EXAMPLES-->
-<%#= image_tag group_member.photo.url (:thumb) %>
-<%#= group_member.first_name %>
-<%#= group_member.last_name %>
-<%#= group_member.phone %>
-<%#= group_member.email %>
-
-<%# group_member.links.each do |link| %>
-<!--<p><%# link.link_address %></p>-->
-<%# end %>
-
-<%#= link_to 'Show', group_member %>
+<!--<script type="text/javascript" charset="utf-8">-->
+<!--$(".group-member-page > div:nth-child(3n)").after("<div class='clearfix'></div>");-->
+<!--</script>-->
