@@ -7,40 +7,10 @@
       <div class="col-md-6">
         <h2><%= news.title %></h2>
         <p>
-          <% news.news_paragraphs.order(:id).each do |paragraph| %>
-            <p><%= paragraph.paragraph %></p>
-        <% end %>
+          <%= news.news_paragraphs.first.paragraph %>
         </p>
-        <%= link_to 'Show', news, class: "btn btn-primary" %>
+        <%= link_to 'les mer', news, class: "btn btn-primary" %>
       </div>
+      <div class="clearfix"></div>
   <% end %>
 </div>
-
-<p id="notice"><%= notice %></p>
-
-<h1>News</h1>
-
-<table>
-  <thead>
-  <tr>
-    <th>Photo</th>
-    <th>Title</th>
-    <th>News text</th>
-    <th colspan="1"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @news.each do |news| %>
-      <tr>
-        <td><%= news.title %></td>
-        <td>
-          <% news.news_paragraphs.order(:id).each do |paragraph| %>
-              <p><%= paragraph.paragraph %></p>
-          <% end %>
-        </td>
-        <td><%= link_to 'Show', news %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
