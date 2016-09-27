@@ -23,9 +23,20 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Nyheter', news_index_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                 aria-haspopup="true" aria-expanded="false">Nyheter <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <% News.order(id: :asc).limit(5).each do |news| %>
+                    <li><%= link_to news.title, news %></li>
+                <% end %>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'se alle nyheter', news_index_path %></a></li>
+              </ul>
+            </li>
             <li><%= link_to 'Teamet', group_members_path %></li>
-            <li><%= link_to 'Kontact oss', contact_path %></li>
+            <li><%= link_to 'Kontakt oss', contact_path %></li>
           </ul>
     </div><!--/.nav-collapse -->
   </div>
