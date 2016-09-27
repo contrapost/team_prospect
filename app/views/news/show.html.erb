@@ -1,34 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="container news-container">
 
-<%= image_tag @news.photo.url %>
-
-<p>
-  <strong>Title:</strong>
-  <%= @news.title %>
-</p>
-
-<p>
-  <strong>News text:</strong>
-  <% @news.news_paragraphs.order(:id).each do |paragraph| %>
-    <p><%= paragraph.paragraph %></p>
-<% end %>
-</p>
-
-<p>
-  <strong>Publisert: </strong>
-  <%= @news.created_at.strftime('%d.%m.%Y') %>
-</p>
-
-<% if @news.created_at != @news.updated_at %>
+  <div class="col-xs-12">
+    <%= image_tag @news.photo.url %>
+  </div>
+  <div class="col-xs-12">
     <p>
-      <strong>Oppdatert: </strong>
-      <%= @news.updated_at.strftime('%d.%m.%Y') %>
-    </p>
-<% end %>
+    <h1><strong><%= @news.title %></strong>
 
-<% if admin_signed_in? %>
-  <%= link_to 'Edit', edit_news_path(@news) %> |
-  <%= link_to 'Back', admin_news_path %>
-<% else %>
-    <%= link_to 'Back', root_path %>
-<% end %>
+    </h1>
+    </p>
+  </div>
+  <div class="col-xs-12">
+    <p>
+      <% @news.news_paragraphs.order(:id).each do |paragraph| %>
+        <p><%= paragraph.paragraph %></p>
+    <% end %>
+    </p>
+  </div>
+  <div class="col-xs-12">
+    <p>
+      <small>Publisert:
+      <%= @news.created_at.strftime('%d.%m.%Y') %>
+      </small>
+    </p>
+    <% if @news.created_at != @news.updated_at %>
+        <p>
+          <strong>Oppdatert: </strong>
+          <%= @news.updated_at.strftime('%d.%m.%Y') %>
+        </p>
+    <% end %>
+
+  </div>
+
+  <% if admin_signed_in? %>
+      <%= link_to 'Edit', edit_news_path(@news) %> |
+      <%= link_to 'Back', admin_news_path %>
+  <% else %>
+      <%= link_to 'Back', root_path %>
+  <% end %>
+</div>

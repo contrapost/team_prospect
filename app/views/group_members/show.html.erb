@@ -12,12 +12,12 @@
       <div class="media-reference">
         <% @group_member.links.each do |link| %>
             <% if link.link_address.include? 'github' %>
-                <a href="<%= link.link_address %>">
-                  <i class="fa fa-github"></i>
+                <a class="btn btn-default btn-lg" href="<%= link.link_address %>">
+                  <i class="fa fa-github"></i> Github
                 </a>
             <% elsif link.link_address.include? 'linkedin' %>
-                <a href="<%= link.link_address %>">
-                  <i class="fa fa-linkedin"></i>
+                <a class="btn btn-primary btn-lg" href="<%= link.link_address %>">
+                  <i class="fa fa-linkedin"></i> Linkedin
                 </a>
             <% else %>
                 <a href="<%= link.link_address %>">
