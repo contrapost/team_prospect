@@ -10,14 +10,25 @@
       </h2>
       <h2><%= @group_member.field_of_study_in_westerdal&.name %></h2>
       <div class="media-reference">
-
-        <i class="fa fa-github"></i>
-        <i class="fa fa-linkedin"></i>
+        <% @group_member.links.each do |link| %>
+            <% if link.link_address.include? 'github' %>
+                <a href="<%= link.link_address %>">
+                  <i class="fa fa-github"></i>
+                </a>
+            <% elsif link.link_address.include? 'linkedin' %>
+                <a href="<%= link.link_address %>">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+            <% else %>
+                <a href="<%= link.link_address %>">
+                  <%= URI.parse(link.link_address).host %>
+                </a>
+            <% end %>
+        <% end %>
       </div>
     </div>
     <div class="col-md-6 no-padding">
-      <!-- TODO: ALEX ADD img-responsive class here plz -->
-      <%= image_tag @group_member.photo.url %>
+      <%= image_tag @group_member.photo.url, class: 'img-responsive' %>
     </div>
   </div>
 
@@ -95,32 +106,12 @@
 <h3>Other user's data</h3>
 
 <p>
-  <strong>Link:</strong>
-  <% @group_member.links.each do |link| %>
-    <p><%= link.link_address %></p>
-<% end %>
-</p>
-
-
-<p>
   <strong>Phone:</strong>
 <p><%= @group_member.phone %></p>
 </p>
 <p>
   <strong>Email:</strong>
 <p><%= @group_member.email %></p>
-</p>
-<p>
-  <strong>Skills:</strong>
-  <% @group_member.skills.each do |skill| %>
-    <p><%= skill.name %></p>
-<% end %>
-</p>
-<p>
-  <strong>Personal text:</strong>
-  <% @group_member.personal_texts.each do |text| %>
-    <p><%= text.paragraph %></p>
-<% end %>
 </p>
 
 <% if admin_signed_in? %>
