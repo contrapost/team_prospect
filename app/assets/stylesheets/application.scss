@@ -41,6 +41,20 @@ body{
   padding-left: 20%;
   padding-right: 20%;
 }
+.navbar-default{
+  border-color:#45B29D;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  background-color:#334D5C;
+  color:white;
+}
+.navbar{
+  background-color:#45B29D;
+  .navbar-brand, .navbar-nav > li > a{
+    color:white;
+  }
+}
 
 .footer-container {
   background-color: #334D5C;
@@ -215,6 +229,19 @@ body{
   }
   .gi-2x{font-size:1em;}
 
+
+  .navbar-default {
+    .navbar-toggle:focus {
+      background-color:#334D5c;
+    }
+  }
+  .navbar-default {
+    .navbar-toggle{
+      .icon-bar{
+        background-color:white;
+      }
+    }
+  }
   .navbar {
     padding-right: 15px;
     padding-left: 15px;
@@ -222,6 +249,7 @@ body{
     .navbar-toggle {
       margin-right: 0px;
     }
+
   }
   .home-header{
     h2{
