@@ -36,7 +36,28 @@ body{
 .margin-top {
   margin-top: 25px;
 }
-
+hr.star-light{
+  margin: 25px auto 30px;
+  padding: 0;
+  max-width: 250px;
+  border: 0;
+  border-top: solid 5px;
+  text-align: center;
+  border-color: #45B29D;
+}
+hr.star-light:after, hr.star-primary:after, hr.star-blue:after {
+  content: "\f005";
+  display: inline-block;
+  position: relative;
+  top: -.8em;
+  padding: 0 .25em;
+  font-family: FontAwesome;
+  font-size: 2em;
+}
+hr.star-light:after {
+  color: #45B29D;
+  background-color: #e7e7e7;
+}
 .btn-stretch {
   padding-left: 20%;
   padding-right: 20%;
@@ -154,6 +175,11 @@ body{
 }
 
 /*===GROUP_MEMBERS===*/
+.team-description{
+  background-color:#e7e7e7;
+  padding:20px;
+  margin-bottom:20px;
+}
 
 .group-member-intro {
   margin-top: 25px;
@@ -221,6 +247,9 @@ body{
 
 .group-member-page {
   margin-bottom: 45px;
+  h2{
+    color:#45B29D;
+  }
 }
 
 /*=== MEDIA QUERIES===*/
