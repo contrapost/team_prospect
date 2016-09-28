@@ -8,7 +8,11 @@
         <strong><%= @group_member.first_name %> <br>
           <%= @group_member.last_name %></strong>
       </h2>
-      <h2><%= @group_member.field_of_study_in_westerdal&.name %></h2>
+      <h2>
+        <a href="<%= @group_member.field_of_study_in_westerdal.link %>"> <!--TODO: Benny, please style this link! -->
+          <%= @group_member.field_of_study_in_westerdal.name %>
+        </a>
+      </h2>
       <div class="media-reference">
         <% @group_member.links.each do |link| %>
             <% if link.link_address.include? 'github' %>
