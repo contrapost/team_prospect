@@ -36,6 +36,11 @@ gem 'bootstrap-sass'
 
 gem 'font-awesome-rails'
 
+# Contact us form
+gem 'contact_us'
+
+gem 'figaro'
+
 # Image upload
 gem 'paperclip', '~> 5.0.0'
 gem 'aws-sdk', '~> 2.3'

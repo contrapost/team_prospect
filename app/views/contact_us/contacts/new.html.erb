@@ -1,0 +1,68 @@
+<h2><%= t('.contact_us') %></h2>
+<%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
+  <% if ContactUs.require_name %>
+    <div class='string required' id='contact_us_contact_name_input'>
+      <%= f.label :name, (t('.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+      <%= f.text_field :name %>
+      <% if f.object.errors[:name].present? %>
+        <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <div class='string required' id='contact_us_contact_email_input'>
+    <%= f.label :email, (t('.email') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+    <%= f.text_field :email %>
+    <% if f.object.errors[:email].present? %>
+      <p class='inline-error'><%= f.object.errors[:email].join(' and ') %></p>
+    <% end %>
+  </div>
+  <% if ContactUs.require_subject %>
+    <div class='string required' id='contact_us_contact_subject_input'>
+      <%= f.label :subject, (t('.subject') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+      <%= f.text_field :subject %>
+      <% if f.object.errors[:subject].present? %>
+        <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <div class='text required' id='contact_us_contact_message_input'>
+    <%= f.label :message, (t('.message') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+    <%= f.text_area :message %>
+    <% if f.object.errors[:message].present? %>
+      <p class='inline-error'><%= f.object.errors[:message].join(' and ') %></p>
+    <% end %>
+  </div>
+  <div class='commit'>
+    <%= f.submit :submit, :class => 'submit create', :title => t('.submit'), :value => t('.submit') %>
+  </div>
+<% end %>
+
+
+<!--<div class="container contact-container">-->
+  <!--<h2 class="text-center">KONTAKT OSS :)</h2>-->
+  <!--<form class="form-horizontal" role="form" > &lt;!&ndash;method="post"&ndash;&gt;-->
+    <!--<div class="form-group">-->
+      <!--<label for="name" class="col-sm-2 control-label">Navn</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+      <!--<label for="email" class="col-sm-2 control-label">E-post</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+      <!--<label for="message" class="col-sm-2 control-label">Melding</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<textarea class="form-control" rows="4" name="message"></textarea>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+      <!--<div class="col-sm-10 col-sm-offset-2">-->
+        <!--<input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</form>-->
+<!--</div>-->
