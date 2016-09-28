@@ -10,7 +10,7 @@
               </div>
             </div>
             <div class="col-sm-10">
-              <%= f.text_field :name, :class => 'form-control', :name => 'name', :placeholder => 'First & Last Name' %>
+              <%= f.text_field :name, :class => 'form-control', :placeholder => 'First & Last Name' %>
               <% if f.object.errors[:name].present? %>
                   <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
               <% end %>
