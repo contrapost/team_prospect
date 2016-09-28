@@ -28,7 +28,7 @@
                  aria-haspopup="true" aria-expanded="false">Nyheter <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <% News.order(id: :asc).limit(5).each do |news| %>
+                <% News.order(id: :desc).limit(5).each do |news| %>
                     <li><%= link_to news.title, news %></li>
                 <% end %>
                 <li role="separator" class="divider"></li>

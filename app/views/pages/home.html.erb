@@ -33,7 +33,7 @@
     <h2><%= News.last.title %> / <small>siste nytt</small></h2>
     <div class="wrapper">
       <div class="col-md-4 no-padding">
-        <%= image_tag News.last.photo.url, class: 'img-responsive' %>
+        <%= link_to image_tag(News.last.photo.url, class: 'img-responsive'), url_for(News.last) %>
       </div>
       <div class="col-md-8">
         <%= News.last.news_paragraphs.first.paragraph %>
