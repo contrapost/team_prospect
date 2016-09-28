@@ -44,6 +44,8 @@
 3. Run `rake db:setup` to populate production database with data from [db:seeds.rb](db/seeds.rb). Here can you find admin user name and password.
 4. To login as admin open [localhost:3000/admin](http://localhost:3000/admin). You can logout by visiting [localhost:3000/admin/logout](http://localhost:3000/admin/logout)
 5. All [static pages](app/views/pages) can be opened in browser by appending `pages/{page_name}` to [localhost:3000](http://localhost:3000) (for example [contact](app/views/pages/contact.html.erb) can be opened by visiting [localhost:3000/pages/contact](http://localhost:3000/pages/cantact)).
+6. To use email services you have to run `bundle exec figaro install`, open config/application.yml and append: 
+    `development: EMAIL_PASSWORD: [password]`. You can get the password from you collaborators.
 
 ### IMAGE UPLOAD:
 1. Open [hovedprosjekt.team/admin](http://hovedprosjekt.team/admin) or [hovedprosjekt.team/images](http://hovedprosjekt.team/images) and login as admin.
