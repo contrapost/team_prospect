@@ -1,5 +1,5 @@
 <div class="container newsfeed-container">
-  <% @news.each do |news| %>
+  <% @news.order(id: :desc).each do |news| %>
       <div class="col-md-6">
         <%= image_tag news.photo.url %>
       </div>
@@ -8,6 +8,9 @@
         <h2><%= news.title %></h2>
         <p>
           <%= news.news_paragraphs.first.paragraph %>
+        </p>
+        <p>
+          Dato: <%= news.created_at.strftime('%d.%m.%Y')  %>
         </p>
         <%= link_to 'les mer', news, class: "btn btn-primary" %>
       </div>
