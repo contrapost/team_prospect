@@ -19,7 +19,9 @@
     </p>
   </div>
   <div class="col-xs-12">
-    <p>Link: <a href="<%= @news.link %>"><%= @news.link %></a></p> <!--TODO: Benny, please style it-->
+    <% unless @news.link.nil? %>
+        <p>Link: <a href="<%= @news.link %>"><%= URI.parse(@news.link).host %></a></p> <!--TODO: Benny, please style it-->
+    <% end %>
   </div>
   <div class="col-xs-12">
     <p>
