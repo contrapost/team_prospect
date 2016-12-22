@@ -1,4 +1,4 @@
-## [HOEVDPROSJEKT.TEAM](hovedprosjekt.team)
+## [HOEVDPROSJEKT.TEAM](http://www.hovedprosjekt.team)
 
 ![Logo](https://s3.amazonaws.com/hovedprosjekt-shared/061608-blue-tiedyed-cloth-icon-people-things-people-audience.png)
 
