@@ -106,18 +106,6 @@
 
 </div>
 
-
-<h3>Other user's data</h3>
-
-<p>
-  <strong>Phone:</strong>
-<p><%= @group_member.phone %></p>
-</p>
-<p>
-  <strong>Email:</strong>
-<p><%= @group_member.email %></p>
-</p>
-
 <% if admin_signed_in? %>
     <%= link_to 'Edit', edit_group_member_path(@group_member) %> |
     <%= link_to 'Back', admin_path %>
